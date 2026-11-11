@@ -17,8 +17,8 @@ body:
       label: Which experience did you try?
       options:
         - Public fictional browser walkthrough only
-        - Private Windows v0.7.57 portable EXE (fictional demo)
-        - Private Python v0.7.57 zipapp (fictional demo)
+        - Private Windows v0.7.58 portable EXE (fictional demo)
+        - Private Python v0.7.58 zipapp (fictional demo)
         - Private pilot on permitted recording (no file sharing)
         - I could not run the tool
     validations:
