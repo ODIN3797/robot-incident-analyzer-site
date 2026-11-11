@@ -6,7 +6,8 @@ The intended Pages address is https://odin3797.github.io/robot-incident-analyzer
 
 - `index.html`: standalone public marketing page and interactive **fictional** incident explorer.
 - `PILOT_GUIDE.md`: product limitations, pilot access, first-time user tasks.
-- `.github/ISSUE_TEMPLATE/pilot_request.yml`: nonconfidential pilot requests.
+- `.github/ISSUE_TEMPLATE/pilot_request.yml`: nonconfidential private pilot access requests.
+- `.github/ISSUE_TEMPLATE/pilot_feedback.yml`: structured, privacy-safe pilot usability feedback (preview or local app).
 
 **No binary, proprietary data, private source, API tokens or customer logs belong in this repository.** The public walkthrough is a visual illustration, not a validated physical-fault detection result.
 
