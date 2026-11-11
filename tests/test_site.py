@@ -34,6 +34,19 @@ class SiteChecks(unittest.TestCase):
         self.assertIn('property="og:title"', self.html)
         self.assertLess(len(self.html.encode()), 120_000)
 
+    def test_windows_portable_onboarding_is_accurate(self):
+        for text in ("V0.7.53", "ria-windows-0.7.53-portable.zip",
+                     "RobotIncidentAnalyzer.exe", "Explore fictional demo",
+                     "Exit session", "unsigned portable build",
+                     "not publicly downloadable", "Python 3.10+"):
+            self.assertIn(text.lower(), self.html.lower())
+        self.assertNotIn("0.7.51", self.html)
+        self.assertIn('data-platform="windows"', self.html)
+        self.assertIn('data-platform="python"', self.html)
+        self.assertIn('data-platform-panel="windows"', self.html)
+        self.assertIn('data-platform-panel="python"', self.html)
+        self.assertIn("selectPlatform(platform)", self.html)
+
     def test_no_broken_internal_nav_or_duplicate_ids(self):
         self.assertEqual(len(set(self.parsed.ids)), len(self.parsed.ids))
         for href in self.parsed.links:
@@ -68,6 +81,13 @@ class SiteChecks(unittest.TestCase):
         self.assertIn('role="tabpanel"', self.html)
         self.assertIn('role="tablist"', self.html)
         self.assertIn("aria-label", self.html)
+
+    def test_public_pilot_form_collects_environment_safely(self):
+        form = (SITE.parent / ".github/ISSUE_TEMPLATE/pilot_request.yml").read_text(encoding="utf-8")
+        self.assertIn("id: environment", form)
+        self.assertIn("Windows 10/11 (portable EXE", form)
+        self.assertIn("Browser walkthrough only", form)
+        self.assertIn("This is a **public issue**", form)
 
     def test_premium_components_present(self):
         for c in ("hero-visual", "hero-stats", "hero-plot", "trust-strip",

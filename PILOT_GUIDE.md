@@ -1,29 +1,53 @@
-# Robot Incident Analyzer — Engineer Pilot
+# Robot Incident Analyzer — Engineer Pilot (v0.7.53)
 
-Robot Incident Analyzer is an **experimental offline engineering triage tool** for ROS1/ROS2 BAG, MCAP, DB3 and telemetry CSV recordings. It groups candidate incidents and presents time-aligned signals in a local HTML report. **It does not diagnose verified physical root causes** and is not safety-certified.
+Robot Incident Analyzer is an **experimental offline engineering triage tool** for authorized ROS 1 BAG, ROS 2 MCAP/DB3 and telemetry CSV recordings. It groups candidate incidents, highlights time-aligned evidence and produces local HTML reports. **It does not verify physical root causes or make safety decisions.**
 
-## See the preview
+## Public preview (no installation)
 
-Open the website's interactive 3-case explorer. The curves and values are fictional illustrations; this preview does **not** upload or analyze your log.
+The website's interactive three-case explorer is a **fictional illustration**, not analyzer output or a detection benchmark. The public page accepts no log uploads.
 
-## Request private pilot access
+## Get private access
 
-The analyzer and GitHub source repository are private. To request access, open the [pilot request form](https://github.com/ODIN3797/robot-incident-analyzer-site/issues/new?template=pilot_request.yml). A GitHub account is required. Do not post confidential data, full logs, customer names, robot serial numbers or personal email addresses in a public issue.
+The source repository, Windows EXE and Python zipapp are in a **private** GitHub release. Request access through the [public pilot request issue](https://github.com/ODIN3797/robot-incident-analyzer-site/issues/new?template=pilot_request.yml) (GitHub account required). Approval is manual and not guaranteed.
 
-If access is approved, you will receive private instructions for the release. The current v0.7.51 pilot package is a Python 3.10+ zipapp, not a Windows installer or a Linux native binary.
+**Do not post customer names, contact information, proprietary robot logs, serial numbers, tokens or employer details in a public issue.**
 
-## Supported workflows (private tool)
+## Windows: portable EXE, no Python installation
 
-- Read authorized ROS1 BAG, ROS2 MCAP/DB3 or telemetry CSVs; review warnings about unsupported messages.
-- Inspect candidate events such as command-vs-odometry shortfall, sensor consistency and diagnostic-state issues.
-- Review incident timelines and evidence context; export HTML reports for permitted audiences.
+1. With approved access, obtain `ria-windows-0.7.53-portable.zip` from the private v0.7.53 release and verify its accompanying SHA-256 checksum.
+2. Extract the **entire** `RobotIncidentAnalyzer` directory. Do not copy only the EXE.
+3. Double-click `RobotIncidentAnalyzer.exe`; it opens a local browser at `127.0.0.1`.
+4. Select **Explore fictional demo** for a first test on generated non-customer data.
+5. Review incidents and evidence in the local workbench. Reports are saved to `%LOCALAPPDATA%\\RobotIncidentAnalyzer\\reports`.
+6. Select **Exit session** inside the local page to stop the server.
 
-## 15-minute usability study
+The EXE is an **unsigned portable build**, not an MSI installer. SmartScreen may warn; do not circumvent organizational security policies. Verify the source and checksum before running. The localhost GUI includes a per-session token and origin checks, but untrusted log files are not sandboxed.
 
-1. Describe the tool's purpose after 60 seconds on the landing page.
-2. Open each fictional scenario and explain why the observation does not prove root cause.
-3. Identify which evidence you would expect in your robot's incident log.
-4. Identify anything unclear about the pilot download, data handling or report.
-5. Tell us whether the workflow could fit your existing debug process.
+## Linux, macOS or Windows: Python zipapp
 
-No raw customer data is required for the first feedback round. Real-world diagnostic precision and time saved have **not** been established.
+1. With approved access, download `ria-pilot-kit-0.7.53.zip` from the private release.
+2. Unzip it and read `README-FIRST.txt`. Install Python **3.10+** if needed; the packaged sample requires no ROS or pip installation.
+3. In the extracted folder run:
+
+```bash
+python3 robot-incident-analyzer-0.7.53.pyz analyze samples --output report
+```
+
+Use `python` instead of `python3` if appropriate. Open `report/report.html` and inspect candidate incidents and missing-signal warnings. CLI users can also run `python3 robot-incident-analyzer-0.7.53.pyz gui` to open the local workbench.
+
+## 15-minute first-user evaluation
+
+1. Explain what this product does after viewing the page for 60 seconds.
+2. Use the fictional website explorer; distinguish an observation from a proven cause.
+3. Run the local demo with your chosen pilot package and identify its first incident window.
+4. Name the evidence you would need to investigate a real event, and what's missing.
+5. Identify one confusing step or missing feature and whether you would try a permitted recording later.
+
+Record OS, how long the first report took, what worked, what blocked you and whether the candidate findings were understandable. **No proprietary recording is required for this first round.**
+
+## Claims and limitations
+
+- Local processing does not mean inputs are safe: only open recordings you are permitted to use and trust. Review report contents before sharing them.
+- ROS 1 lz4 and some compressed MCAP types may need optional dependencies; the tool reports incomplete coverage.
+- Windows releases may trigger SmartScreen, and portable executables can be reverse engineered.
+- Public simulation and synthetic tests have been performed, but **independently verified real-field diagnostic precision, recall and time saved have not been established**.
