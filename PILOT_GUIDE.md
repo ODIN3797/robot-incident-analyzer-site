@@ -1,4 +1,4 @@
-# Robot Incident Analyzer — Engineer Pilot (v0.7.53)
+# Robot Incident Analyzer — Engineer Pilot (v0.7.56)
 
 Robot Incident Analyzer is an **experimental offline engineering triage tool** for authorized ROS 1 BAG, ROS 2 MCAP/DB3 and telemetry CSV recordings. It groups candidate incidents, highlights time-aligned evidence and produces local HTML reports. **It does not verify physical root causes or make safety decisions.**
 
@@ -14,7 +14,7 @@ The source repository, Windows EXE and Python zipapp are in a **private** GitHub
 
 ## Windows: portable EXE, no Python installation
 
-1. With approved access, obtain `ria-windows-0.7.53-portable.zip` from the private v0.7.53 release and verify its accompanying SHA-256 checksum.
+1. With approved access, obtain `ria-windows-0.7.56-portable.zip` from the private v0.7.56 release and verify its accompanying SHA-256 checksum.
 2. Extract the **entire** `RobotIncidentAnalyzer` directory. Do not copy only the EXE.
 3. Double-click `RobotIncidentAnalyzer.exe`; it opens a local browser at `127.0.0.1`.
 4. Select **Explore fictional demo** for a first test on generated non-customer data.
@@ -25,15 +25,15 @@ The EXE is an **unsigned portable build**, not an MSI installer. SmartScreen may
 
 ## Linux, macOS or Windows: Python zipapp
 
-1. With approved access, download `ria-pilot-kit-0.7.53.zip` from the private release.
+1. With approved access, download `ria-pilot-kit-0.7.56.zip` from the private release.
 2. Unzip it and read `README-FIRST.txt`. Install Python **3.10+** if needed; the packaged sample requires no ROS or pip installation.
 3. In the extracted folder run:
 
 ```bash
-python3 robot-incident-analyzer-0.7.53.pyz analyze samples --output report
+python3 robot-incident-analyzer-0.7.56.pyz analyze samples --output report
 ```
 
-Use `python` instead of `python3` if appropriate. Open `report/report.html` and inspect candidate incidents and missing-signal warnings. CLI users can also run `python3 robot-incident-analyzer-0.7.53.pyz gui` to open the local workbench.
+Use `python` instead of `python3` if appropriate. Open `report/report.html` and inspect candidate incidents and missing-signal warnings. CLI users can also run `python3 robot-incident-analyzer-0.7.56.pyz gui` to open the local workbench.
 
 ## 15-minute first-user evaluation
 
