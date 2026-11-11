@@ -22,3 +22,7 @@ The private analyzer release **v0.7.53** includes both a Python zipapp (.pyz) an
 ## Feedback and outreach
 
 Invite ROS engineers to test the public fictional walkthrough first. Use the public issue form for nonconfidential feedback. Never upload raw recordings to a public issue. Publish outreach only after verifying the live site.
+
+## Pilot feedback metrics (offline)
+
+After receiving public feedback forms, run the local, aggregate-only [pilot feedback summary guide](FEEDBACK_METRICS.md) and its standard-library script. The input issue export contains usernames and free text: keep that export private and never commit it. Aggregate counts are not evidence of independent engineer identity, physical-fault accuracy or proven time savings.
