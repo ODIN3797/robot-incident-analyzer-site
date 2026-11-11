@@ -8,7 +8,7 @@ body:
       value: |
         This is a **public issue**. Do not post customer names, proprietary robot logs,
         contact information, passwords, credentials or source code.
-        The engineer pilot is currently a Python 3.10+ zipapp, not a native installer.
+        The private v0.7.53 pilot offers a Windows portable EXE (unsigned, not an installer) and a Python 3.10+ zipapp. No public binary download is available.
         Requests are reviewed manually and do not guarantee access.
   - type: dropdown
     id: role
@@ -19,6 +19,18 @@ body:
         - AMR / AGV integration engineer
         - Robotics researcher or student
         - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Preferred pilot environment
+      options:
+        - Windows 10/11 (portable EXE, no Python)
+        - Linux (Python 3.10+ zipapp)
+        - macOS (Python 3.10+ zipapp)
+        - Windows (Python 3.10+ zipapp)
+        - Browser walkthrough only (no private executable)
     validations:
       required: true
   - type: dropdown
