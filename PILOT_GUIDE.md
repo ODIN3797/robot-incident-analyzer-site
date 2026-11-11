@@ -1,4 +1,4 @@
-# Robot Incident Analyzer — Engineer Pilot (v0.7.57)
+# Robot Incident Analyzer — Engineer Pilot (v0.7.58)
 
 Robot Incident Analyzer is an **experimental offline engineering triage tool** for authorized ROS 1 BAG, ROS 2 MCAP/DB3 and telemetry CSV recordings. It groups candidate incidents, highlights time-aligned evidence and produces local HTML reports. **It does not verify physical root causes or make safety decisions.**
 
@@ -14,7 +14,7 @@ The source repository, Windows EXE and Python zipapp are in a **private** GitHub
 
 ## Windows: portable EXE, no Python installation
 
-1. With approved access, obtain `ria-windows-0.7.57-portable.zip` from the private v0.7.57 release and verify its accompanying SHA-256 checksum.
+1. With approved access, obtain `ria-windows-0.7.58-portable.zip` from the private v0.7.58 release and verify its accompanying SHA-256 checksum.
 2. Extract the **entire** `RobotIncidentAnalyzer` directory. Do not copy only the EXE.
 3. Double-click `RobotIncidentAnalyzer.exe`; it opens a local browser at `127.0.0.1`.
 4. Select **Explore fictional demo** for a first test on generated non-customer data.
@@ -25,15 +25,15 @@ The EXE is an **unsigned portable build**, not an MSI installer. SmartScreen may
 
 ## Linux, macOS or Windows: Python zipapp
 
-1. With approved access, download `ria-pilot-kit-0.7.57.zip` from the private release.
+1. With approved access, download `ria-pilot-kit-0.7.58.zip` from the private release.
 2. Unzip it and read `README-FIRST.txt`. Install Python **3.10+** if needed; the packaged sample requires no ROS or pip installation.
 3. In the extracted folder run:
 
 ```bash
-python3 robot-incident-analyzer-0.7.57.pyz analyze samples --output report
+python3 robot-incident-analyzer-0.7.58.pyz analyze samples --output report
 ```
 
-Use `python` instead of `python3` if appropriate. Open `report/report.html` and inspect candidate incidents and missing-signal warnings. CLI users can also run `python3 robot-incident-analyzer-0.7.57.pyz gui` to open the local workbench.
+Use `python` instead of `python3` if appropriate. Open `report/report.html` and inspect candidate incidents and missing-signal warnings. CLI users can also run `python3 robot-incident-analyzer-0.7.58.pyz gui` to open the local workbench.
 
 ## 15-minute first-user evaluation
 
@@ -58,4 +58,8 @@ The first business validation target is **five independent robotics engineers** 
 - Windows releases may trigger SmartScreen, and portable executables can be reverse engineered.
 - Public simulation and synthetic tests have been performed, but **independently verified real-field diagnostic precision, recall and time saved have not been established**.
 
-**New in v0.7.57:** On permitted telemetry CSVs, an operator can explicitly map 0/1 validity columns in the local analyzer config (for example, `"validity_flags": {"ultra_front_valid": {"invalid": 0}}`). Each invalid recorded run becomes a bounded INFO signal-quality observation in HTML/JSON. Missing or unrecognized values remain unknown. **A validity bit is not independently confirmed equipment failure.** The public fictional walkthrough is not this analysis engine.
+**New in v0.7.58:** On permitted telemetry CSVs, an operator can explicitly map 0/1 validity columns in the local analyzer config (for example, `"validity_flags": {"ultra_front_valid": {"invalid": 0}}`). Each invalid recorded run becomes a bounded INFO signal-quality observation in HTML/JSON. Missing or unrecognized values remain unknown. **A validity bit is not independently confirmed equipment failure.** The public fictional walkthrough is not this analysis engine.
+
+### Optional localization label comparison (v0.7.58)
+
+For advanced testers **with their own approved, independently prepared** AMCL localization failure labels and separately produced binary detector predictions, the private CLI supports `score-localization-csv --labels labels.csv --predictions predictions.csv --manifest manifest.json --output comparison.json`. Both CSVs must have the same recording clock and strictly increasing timestamps per run, and the manifest must pin their SHA-256s. If less than 95% of the evaluable samples in **any run** match, all exploratory metrics are withheld. Real-world physical fault accuracy and validation on the original TUHH Isaac Sim dataset are **not claimed**. The public fictional walkthrough does not run this command.
