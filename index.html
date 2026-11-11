@@ -168,7 +168,7 @@ footer{background:#091320}
 <section id="pilot" class="container" aria-labelledby="pilot-heading">
   <div class="eyebrow">04 / PRIVATE ENGINEER PILOT · V0.7.58</div>
   <h2 id="pilot-heading">From sample data to<br>your first investigation.</h2>
-  <p class="pilot-intro">A real, offline analyzer is available to approved pilot testers. Choose your environment to see the correct first-run steps. This page is a public preview — <strong>it does not host the app, collect robot files, or grant private download access.</strong></p>
+  <p class="pilot-intro">An offline analyzer is available for manually approved evaluation. Choose a platform below. This public website hosts only a genuine <em>fictional-data</em> HTML report, not the executable, payment, customer logs or private source. Trial binaries are shared separately after an agreed secure process.</p>
   <p class="pilot-intro small">New: an optional offline AMCL localization-label comparison command supports prepared, timestamped 0/1 labels and independent predictions. Only synthetic evaluation fixtures have been exercised; this is not an independently verified real-robot diagnostic benchmark.</p>
   <div class="pilot-shell">
     <div class="eyebrow">CHOOSE HOW YOU'LL TEST</div>
@@ -181,7 +181,7 @@ footer{background:#091320}
         <div>
           <h3 class="pilot-title">Windows: no Python or ROS installation</h3>
           <ol class="pilot-steps">
-            <li>Request access to the <strong>private v0.7.58 pilot</strong>. Approved testers receive instructions to obtain <code>ria-windows-0.7.58-portable.zip</code> and verify its SHA-256 checksum.</li>
+            <li>Apply for a <strong>v0.7.58 manual evaluation</strong>. If approved, arrange separate secure, binary-only delivery of <code>ria-windows-0.7.58-portable.zip</code> and its SHA-256 checksum. Private source access is not required.</li>
             <li>Extract the <strong>entire</strong> <code>RobotIncidentAnalyzer</code> folder. Double-click <code>RobotIncidentAnalyzer.exe</code>.</li>
             <li>Your browser opens the local workbench on <code>127.0.0.1</code>. Click <strong>Explore fictional demo</strong> to run the real engine on made-up sample data.</li>
             <li>Inspect candidate incidents and evidence. Reports are saved locally under <code>%LOCALAPPDATA%\RobotIncidentAnalyzer\reports</code>. Use <strong>Exit session</strong> when finished.</li>
@@ -200,7 +200,7 @@ footer{background:#091320}
         <div>
           <h3 class="pilot-title">Linux, macOS or Windows: standalone Python zipapp</h3>
           <ol class="pilot-steps">
-            <li>Request approved access to the <strong>private v0.7.58 pilot kit</strong> and download <code>ria-pilot-kit-0.7.58.zip</code>.</li>
+            <li>Request a <strong>v0.7.58 manual evaluation</strong>. If approved, arrange separate secure delivery of the binary-only <code>ria-pilot-kit-0.7.58.zip</code> with its SHA-256 checksum.</li>
             <li>Unzip the kit, open a terminal in that folder and run its fictional sample using <strong>Python 3.10+</strong>. No ROS or pip installation is needed.</li>
           </ol>
           <code class="command">python3 robot-incident-analyzer-0.7.58.pyz analyze samples --output report</code>
@@ -210,7 +210,7 @@ footer{background:#091320}
           <h3>Private access, local analysis</h3>
           <p>The ZIP contains the Python program and fictional recordings. The analyzer runs locally; reports can still contain sensitive details when you use your own recordings.</p>
           <a class="button" href="https://github.com/ODIN3797/robot-incident-analyzer-site/issues/new?template=pilot_request.yml" target="_blank" rel="noopener noreferrer">Request Python pilot access ↗</a>
-          <p class="pilot-note">The release is hosted in a private repository. Approval is reviewed manually; a public download is not yet offered.</p>
+          <p class="pilot-note">Builds originate in a private repository. Trial approval and artifact-only delivery are manual. There is no public executable download or automatic approval.</p>
         </aside>
       </div>
     </div>
@@ -222,7 +222,7 @@ footer{background:#091320}
   </div>
 </section>
 </main>
-<footer><div class="container">Robot Incident Analyzer · Experimental engineering software, not a safety-critical decision system. This site does not accept robot logs or payment details. · <a href="./PRIVACY.md">Privacy &amp; data</a> · <a href="./PILOT_TERMS.md">Pilot scope</a> · <a href="#top">Back to top ↑</a></div></footer>
+<footer><div class="container">Robot Incident Analyzer · Experimental engineering software, not a safety-critical decision system. This site does not accept robot logs or payment details. · <a href="./privacy.html">Privacy &amp; data</a> · <a href="./pilot-terms.html">Pilot scope</a> · <a href="#top">Back to top ↑</a></div></footer>
 <script>
 "use strict";
 const scenarios=[
