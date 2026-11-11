@@ -75,6 +75,17 @@ class SiteChecks(unittest.TestCase):
         self.assertIn("https://github.com/ODIN3797/robot-incident-analyzer-site/issues/new?template=pilot_request.yml", self.parsed.links)
         self.assertIn("./PILOT_GUIDE.md", self.parsed.links)
 
+    def test_pilot_feedback_is_public_and_privacy_safe(self):
+        link = "https://github.com/ODIN3797/robot-incident-analyzer-site/issues/new?template=pilot_feedback.yml"
+        self.assertIn(link, self.parsed.links)
+        self.assertIn("Share pilot feedback", self.html)
+        form = (SITE.parent / ".github/ISSUE_TEMPLATE/pilot_feedback.yml").read_text(encoding="utf-8")
+        for marker in ("id: experience", "id: outcome", "id: first_report_time",
+                       "id: friction", "id: privacy", "This is a public issue"):
+            self.assertIn(marker.lower(), form.lower())
+        self.assertIn("required: true", form)
+        self.assertNotIn("type: upload", form)
+
     def test_self_contained_and_accessible(self):
         self.assertTrue(all("src" not in tag for tag in self.parsed.scripts))
         self.assertIn("prefers-reduced-motion", self.html)

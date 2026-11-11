@@ -1,0 +1,84 @@
+name: Engineer pilot usability feedback
+description: Share non-confidential feedback after exploring the synthetic preview or private local pilot
+title: "[Feedback] Engineer pilot review"
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Robot Incident Analyzer.
+        **This is a public issue.** Never post raw bags, logs, employer/customer
+        names, robot serial numbers, internal IPs, passwords, private links,
+        personal contact information or report screenshots with sensitive data.
+        A candidate event is not a proven physical fault.
+  - type: dropdown
+    id: experience
+    attributes:
+      label: Which experience did you try?
+      options:
+        - Public fictional browser walkthrough only
+        - Private Windows v0.7.53 portable EXE (fictional demo)
+        - Private Python v0.7.53 zipapp (fictional demo)
+        - Private pilot on permitted recording (no file sharing)
+        - I could not run the tool
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: What could you complete?
+      options:
+        - Understand the purpose only
+        - Find the example incident
+        - Find the incident and inspect its evidence
+        - Export or open an HTML report
+        - Nothing — blocked by setup or UI
+    validations:
+      required: true
+  - type: dropdown
+    id: first_report_time
+    attributes:
+      label: Time from opening the local app to first report (optional)
+      options:
+        - Not measured / website only
+        - Under 2 minutes
+        - 2 to 5 minutes
+        - 5 to 15 minutes
+        - Over 15 minutes
+        - Could not complete
+    validations:
+      required: false
+  - type: textarea
+    id: evidence
+    attributes:
+      label: What evidence did you expect to see?
+      description: Describe signal types or generic debugging steps, not actual logs.
+      placeholder: "Expected navigation state and a timestamp-aligned cmd_vel/odom comparison..."
+    validations:
+      required: false
+  - type: textarea
+    id: friction
+    attributes:
+      label: What was the most confusing or broken step?
+      description: Describe general UI/behavior only. Do not paste error logs or private data.
+      placeholder: "I couldn't tell which incident to open first..."
+    validations:
+      required: false
+  - type: dropdown
+    id: retest
+    attributes:
+      label: Would you try this workflow for a future permitted incident?
+      options:
+        - Yes
+        - Maybe, after improvements
+        - No
+        - Not sure yet
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public issue privacy
+      options:
+        - label: I confirm this report contains no proprietary logs, private artifacts or personal data.
+          required: true
