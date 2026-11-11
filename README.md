@@ -17,7 +17,7 @@ Repository owner: go to **Settings → Pages → Build and deployment → Source
 
 ## Product distribution
 
-The private analyzer release **v0.7.57** includes both a Python zipapp (.pyz) and a **Windows portable EXE ZIP** (no Python installation required). The EXE was built and smoke-tested through release CI. This public site hosts **neither** package: access is reviewed manually through the public pilot request, and the analyzer binaries remain in the private repository. It is an unsigned portable EXE, not an MSI installer. No Linux-native executable or public download is offered. See [PILOT_GUIDE.md](PILOT_GUIDE.md) for steps and limitations.
+The private analyzer release **v0.7.58** includes both a Python zipapp (.pyz) and a **Windows portable EXE ZIP** (no Python installation required). The EXE was built and smoke-tested through release CI. This public site hosts **neither** package: access is reviewed manually through the public pilot request, and the analyzer binaries remain in the private repository. It is an unsigned portable EXE, not an MSI installer. No Linux-native executable or public download is offered. See [PILOT_GUIDE.md](PILOT_GUIDE.md) for steps and limitations.
 
 ## Feedback and outreach
 
