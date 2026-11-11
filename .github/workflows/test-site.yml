@@ -1,0 +1,29 @@
+name: Validate public website
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check HTML, links, pilot safety, and responsive structure
+        run: python -m unittest discover -s tests -v
+      - name: Check inline JavaScript syntax
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          html = Path('index.html').read_text(encoding='utf-8')
+          scripts = re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>', html, flags=re.S|re.I)
+          assert scripts, "Missing interactive demo"
+          Path('/tmp/ria-site.js').write_text('\n'.join(scripts), encoding='utf-8')
+          PY
+          node --check /tmp/ria-site.js
