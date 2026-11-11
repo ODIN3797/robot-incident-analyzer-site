@@ -115,11 +115,11 @@ footer{background:#091320}
 </div></div></div>
 <p class="fineprint">This interactive illustration is a fictional product walkthrough, not a genuine analyzer report or accuracy benchmark. A real analyzer-generated sample report will be published after independent review of the public artifact.</p><div class="actions"><a class="button secondary" href="#demo">Try the interactive sample walkthrough ↓</a></div>
 </section>
-<section id="how" class="container"><div class="eyebrow">03 / HOW IT WORKS</div><h2>Less searching. More investigating.</h2><div class="grid"><article class="feature"><span class="number">01 · IMPORT</span><h3>Analyze locally</h3><p>Open your authorized MCAP, ROS 2 DB3, ROS 1 BAG, or CSV recording. The pilot runs on your computer without uploading files to our servers.</p></article><article class="feature"><span class="number">02 · TRIAGE</span><h3>Prioritize anomalies</h3><p>Inspect candidate events like velocity shortfall, stale diagnostics, topic gaps, and sensor inconsistencies. Missing coverage is surfaced instead of hidden.</p></article><article class="feature"><span class="number">03 · REVIEW</span><h3>Share evidence</h3><p>Open an HTML investigation report with context windows and aligned signals, and export one incident for a focused engineering conversation.</p></article></div>
+<section id="how" class="container"><div class="eyebrow">03 / HOW IT WORKS</div><h2>Less searching. More investigating.</h2><div class="grid"><article class="feature"><span class="number">01 · IMPORT</span><h3>Analyze locally</h3><p>Open your authorized MCAP, ROS 2 DB3, ROS 1 BAG, or CSV recording. The pilot runs on your computer without uploading files to our servers.</p></article><article class="feature"><span class="number">02 · TRIAGE</span><h3>Prioritize anomalies</h3><p>Inspect candidate events like velocity shortfall, stale diagnostics, and topic gaps. Optional, operator-configured CSV validity flags reveal invalid sensor readings as INFO observations, not confirmed faults. Missing coverage stays visible.</p></article><article class="feature"><span class="number">03 · REVIEW</span><h3>Share evidence</h3><p>Open an HTML investigation report with context windows and aligned signals, and export one incident for a focused engineering conversation.</p></article></div>
 </section>
 <section class="container"><div class="callout"><div class="eyebrow">PRIVATE BY DESIGN</div><h2>Your logs stay yours.<br>Evidence stays traceable.</h2><p>The analyzer flags potential anomalies for a human to review. Observed correlation is not proof of physical cause. Public simulation and synthetic examples have been exercised; independently confirmed field-fault precision and recall have not yet been established.</p></div></section>
 <section id="pilot" class="container" aria-labelledby="pilot-heading">
-  <div class="eyebrow">04 / PRIVATE ENGINEER PILOT · V0.7.56</div>
+  <div class="eyebrow">04 / PRIVATE ENGINEER PILOT · V0.7.57</div>
   <h2 id="pilot-heading">From sample data to<br>your first investigation.</h2>
   <p class="pilot-intro">A real, offline analyzer is available to approved pilot testers. Choose your environment to see the correct first-run steps. This page is a public preview — <strong>it does not host the app, collect robot files, or grant private download access.</strong></p>
   <div class="pilot-shell">
@@ -133,7 +133,7 @@ footer{background:#091320}
         <div>
           <h3 class="pilot-title">Windows: no Python or ROS installation</h3>
           <ol class="pilot-steps">
-            <li>Request access to the <strong>private v0.7.56 pilot</strong>. Approved testers receive instructions to obtain <code>ria-windows-0.7.56-portable.zip</code> and verify its SHA-256 checksum.</li>
+            <li>Request access to the <strong>private v0.7.57 pilot</strong>. Approved testers receive instructions to obtain <code>ria-windows-0.7.57-portable.zip</code> and verify its SHA-256 checksum.</li>
             <li>Extract the <strong>entire</strong> <code>RobotIncidentAnalyzer</code> folder. Double-click <code>RobotIncidentAnalyzer.exe</code>.</li>
             <li>Your browser opens the local workbench on <code>127.0.0.1</code>. Click <strong>Explore fictional demo</strong> to run the real engine on made-up sample data.</li>
             <li>Inspect candidate incidents and evidence. Reports are saved locally under <code>%LOCALAPPDATA%\RobotIncidentAnalyzer\reports</code>. Use <strong>Exit session</strong> when finished.</li>
@@ -152,10 +152,10 @@ footer{background:#091320}
         <div>
           <h3 class="pilot-title">Linux, macOS or Windows: standalone Python zipapp</h3>
           <ol class="pilot-steps">
-            <li>Request approved access to the <strong>private v0.7.56 pilot kit</strong> and download <code>ria-pilot-kit-0.7.56.zip</code>.</li>
+            <li>Request approved access to the <strong>private v0.7.57 pilot kit</strong> and download <code>ria-pilot-kit-0.7.57.zip</code>.</li>
             <li>Unzip the kit, open a terminal in that folder and run its fictional sample using <strong>Python 3.10+</strong>. No ROS or pip installation is needed.</li>
           </ol>
-          <code class="command">python3 robot-incident-analyzer-0.7.56.pyz analyze samples --output report</code>
+          <code class="command">python3 robot-incident-analyzer-0.7.57.pyz analyze samples --output report</code>
           <p class="pilot-note">Use <code>python</code> instead of <code>python3</code> if that is your Python launcher. Open <code>report/report.html</code> locally and review the grouped incidents.</p>
         </div>
         <aside class="pilot-aside">
