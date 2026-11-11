@@ -35,7 +35,7 @@ class SiteChecks(unittest.TestCase):
         self.assertLess(len(self.html.encode()), 120_000)
 
     def test_windows_portable_onboarding_is_accurate(self):
-        for text in ("V0.7.56", "ria-windows-0.7.56-portable.zip",
+        for text in ("V0.7.57", "ria-windows-0.7.57-portable.zip",
                      "RobotIncidentAnalyzer.exe", "Explore fictional demo",
                      "Exit session", "unsigned portable build",
                      "not publicly downloadable", "Python 3.10+"):
