@@ -1,0 +1,77 @@
+name: Team or commercial pilot inquiry
+description: Discuss a scoped paid pilot or future team license for offline incident triage
+title: "[Commercial] Team pilot conversation"
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This form opens a **public GitHub issue**. Do not share your company name,
+        customer details, private contacts, contractual terms, robot logs, system
+        details, or budgets tied to an identifiable organization. A paid
+        commercial license is **not yet available through online checkout**.
+        The owner will manually review suitable inquiries before agreeing
+        on scope, pricing, security, delivery and terms through a separate
+        approved private channel.
+  - type: dropdown
+    id: role
+    attributes:
+      label: Role / use case
+      options:
+        - ROS / autonomy software engineering
+        - AMR / AGV systems integration
+        - Robotics operations and deployment
+        - Robotics research / testing
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: team_size
+    attributes:
+      label: Approximate number of engineers (no employer names)
+      options:
+        - 1
+        - 2 to 5
+        - 6 to 20
+        - More than 20
+        - Prefer not to say
+    validations:
+      required: true
+  - type: dropdown
+    id: interest
+    attributes:
+      label: What would be most useful?
+      options:
+        - 14-day engineer evaluation first
+        - Scoped paid onboarding / file mapping pilot
+        - Future team license discussion
+        - Just a public demo review
+    validations:
+      required: true
+  - type: dropdown
+    id: format
+    attributes:
+      label: Broad data format
+      options:
+        - ROS1 BAG
+        - ROS2 MCAP or DB3
+        - Telemetry CSV
+        - Multiple formats
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What kind of incident review would you like to improve? (optional)
+      description: Generic use case only; no proprietary system or customer details.
+      placeholder: "Review navigation timeouts together with command and odometry signals..."
+    validations:
+      required: false
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public issue safety
+      options:
+        - label: I understand this issue is public and contains no confidential or personal details.
+          required: true
