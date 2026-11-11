@@ -45,6 +45,12 @@ Use `python` instead of `python3` if appropriate. Open `report/report.html` and 
 
 Record OS, how long the first report took, what worked, what blocked you and whether the candidate findings were understandable. **No proprietary recording is required for this first round.**
 
+## Share usability feedback (no logs)
+
+After trying the website walkthrough or local pilot, use the [public feedback form](https://github.com/ODIN3797/robot-incident-analyzer-site/issues/new?template=pilot_feedback.yml). Choose which environment you tried, whether you found a candidate incident and its evidence, the time to your first report (if measured), one missing signal and your biggest point of confusion. No real recording, error logs, customer names or sensitive screenshots are necessary.
+
+The first business validation target is **five independent robotics engineers** completing the preview and structured feedback. A form being available is not evidence that five testers participated.
+
 ## Claims and limitations
 
 - Local processing does not mean inputs are safe: only open recordings you are permitted to use and trust. Review report contents before sharing them.
