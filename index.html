@@ -76,6 +76,12 @@ footer{background:#091320}
 .pilot-note{margin:15px 0 0;font-size:.81rem;color:#b2c3d4}
 @media(max-width:750px){.pilot-shell{padding:19px}.platform-layout{grid-template-columns:1fr}.platform-button{flex:1 1 200px}.pilot-aside{padding:18px}}
 
+
+.feedback-strip{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:26px;padding:24px 27px;border:1px solid #345063;border-radius:12px;background:#102131}
+.feedback-strip strong{font-size:1rem;display:block}
+.feedback-strip p{font-size:.86rem;color:var(--muted);margin:8px 0 0}
+.feedback-strip .button{flex-shrink:0}
+@media(max-width:750px){.feedback-strip{display:block;padding:20px}.feedback-strip .button{margin-top:17px;width:100%}}
 </style>
 </head>
 <body>
@@ -162,6 +168,10 @@ footer{background:#091320}
     </div>
   </div>
   <p class="fineprint">Experimental engineering triage only; candidate anomalies are not confirmed root causes or safety decisions. Read the <a href="./PILOT_GUIDE.md">pilot guide</a> before evaluating authorized data.</p>
+  <div class="feedback-strip">
+    <div><strong>Already explored the demo?</strong><p>Tell us what evidence was missing or what slowed you down. A five-minute review helps make this workbench useful for real ROS workflows. Share general feedback only — no robot logs.</p></div>
+    <a class="button secondary" href="https://github.com/ODIN3797/robot-incident-analyzer-site/issues/new?template=pilot_feedback.yml" target="_blank" rel="noopener noreferrer">Share pilot feedback ↗</a>
+  </div>
 </section>
 </main>
 <footer><div class="container">Robot Incident Analyzer · Experimental software for engineering review, not safety-critical decisions. No analytics, third-party fonts, cookies, or log uploads on this page. · <a href="#top">Back to top ↑</a></div></footer>
