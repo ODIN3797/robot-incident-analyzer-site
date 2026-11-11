@@ -1,0 +1,50 @@
+name: Engineer pilot access request
+description: Request a private evaluation of the offline ROS incident analyzer
+title: "[Pilot] Request access"
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a **public issue**. Do not post customer names, proprietary robot logs,
+        contact information, passwords, credentials or source code.
+        The engineer pilot is currently a Python 3.10+ zipapp, not a native installer.
+        Requests are reviewed manually and do not guarantee access.
+  - type: dropdown
+    id: role
+    attributes:
+      label: Robotics role
+      options:
+        - ROS / robot software engineer
+        - AMR / AGV integration engineer
+        - Robotics researcher or student
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: input
+    attributes:
+      label: What type of recording would you like to analyze?
+      options:
+        - ROS2 MCAP
+        - ROS2 DB3
+        - ROS1 BAG
+        - CSV telemetry
+        - Just the synthetic demo first
+    validations:
+      required: true
+  - type: textarea
+    id: feedback
+    attributes:
+      label: What is the main problem you want to solve?
+      description: Describe a general workflow only. No company, customer or confidential details.
+      placeholder: "I want to review navigation incidents with command vs odometry context..."
+    validations:
+      required: false
+  - type: checkboxes
+    id: security
+    attributes:
+      label: Data handling
+      options:
+        - label: I understand this issue is public and will not upload private logs or confidential data.
+          required: true
