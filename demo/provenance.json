@@ -1,0 +1,15 @@
+{
+  "kind": "GENUINE_RIA_ENGINE_REPORT_FROM_BUILT_IN_FICTIONAL_DATA",
+  "public_preview_only": true,
+  "source_commit": "4fd7db5a25105db942af160314d655a93b9b0bcb",
+  "analyzer_version": "0.7.58",
+  "input_origin": "robot_incident_analyzer.demo + fixture_v2; wholly synthetic",
+  "number_of_input_files": 3,
+  "candidate_event_count": 19,
+  "investigation_finding_count": 17,
+  "report_html_sha256": "73c3edc74f67687415d215dd0b4a45ea14f84374757a06de8f325f3092ee2818",
+  "physical_fault_precision": null,
+  "physical_fault_recall": null,
+  "physical_fault_root_cause_verified": false,
+  "no_real_robot_data": true
+}
