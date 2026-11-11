@@ -60,8 +60,8 @@ class SiteChecks(unittest.TestCase):
         self.assertIn("ArrowLeft", self.html)
 
     def test_preview_makes_no_real_fault_claim(self):
-        for marker in ("SYNTHETIC DEMO", "fictional product walkthrough",
-                       "not a genuine analyzer report", "not proof of physical cause"):
+        for marker in ("SYNTHETIC DEMO", "hand-authored fictional illustration",
+                       "not detector output", "not proof of physical cause"):
             self.assertIn(marker, self.html)
 
     def test_no_private_source_or_collection(self):
