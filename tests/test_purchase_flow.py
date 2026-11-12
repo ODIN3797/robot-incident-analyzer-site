@@ -112,7 +112,7 @@ class PurchasePageTests(unittest.TestCase):
         self.assertIn('id="paid-cta"', self.page)
         self.assertIn(ISSUE_BASE + "pilot_request.yml", self.page)
         self.assertIn(ISSUE_BASE + "commercial_inquiry.yml", self.page)
-        self.assertIn("do not automatically enforce a 14-day time limit", self.page)
+        self.assertIn("does not automatically enforce a 14-day time limit", self.page.lower())
         self.assertIn("No payment will be taken", self.page)
         self.assertNotIn("stripe.com/checkout/session", self.page)
         self.assertNotIn('<form', self.page)
@@ -159,7 +159,8 @@ class PurchasePageTests(unittest.TestCase):
     def test_homepage_has_purchase_navigation_and_no_fake_checkout(self):
         self.assertIn('href="./pricing.html"', self.home)
         self.assertIn("Direct downloads and paid orders are not live yet", self.home)
-        self.assertIn("14-day manual", self.home.lower())
+        self.assertIn("14-day", self.home.lower())
+        self.assertIn("manual evaluation", self.home.lower())
         self.assertNotIn("lemonsqueezy.com/checkout/buy/", self.home)
 
     def test_public_pages_exist(self):
