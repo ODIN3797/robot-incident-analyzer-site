@@ -5,7 +5,7 @@
 The intended Pages address is https://odin3797.github.io/robot-incident-analyzer-site/ — accessible only **after** Pages is enabled and deployed.
 
 - `index.html`: standalone public marketing page and interactive **fictional** incident explorer.
-- `pricing.html` and `purchase-config.json`: clear 14-day evaluation and paid team-license flows, with fail-closed support for future **verified** public Windows download and Lemon Squeezy checkout. Currently manual inquiries only; no functioning self-serve payment or installer download.
+- `pricing.html` and `purchase-config.json`: the **14-day manual trial** remains the primary call to action, while **Pro / Team paid licenses** are visibly labeled **COMING SOON**, with a genuinely disabled purchase button and no price or release date promise. No functioning checkout or self-serve installer download exists. A future merchant integration stays fail-closed.
 - `SELF_SERVICE_COMMERCE_ROLLOUT.md`: exact business/merchant, signed trial entitlement, release asset, license activation and verification gates.
 - `demo/report.html`: **actual RIA-engine-generated** standalone HTML report created from three **fictional** inputs, not field data; 19 observations and 17 findings on the reproducible v0.7.59 build.
 - `demo/provenance.json`: source SHA, report SHA-256, analyzer version, explicit synthetic-only and withheld field precision/recall.
@@ -37,7 +37,7 @@ After receiving public feedback forms, run the local, aggregate-only [pilot feed
 
 ## Launch state (manual early access, not a completed commercial sale)
 
-The homepage prioritizes a **14-day no-payment trial** and a genuine fictional-data sample report. Checkout has been intentionally removed from the public trial-first UI pending product validation. The website currently offers **two clearly different experiences**:
+The homepage prioritizes a **14-day no-payment trial** and a genuine fictional-data sample report. Live checkout is intentionally disabled; the **purchase option remains visible as COMING SOON** so visitors know that paid licensing is planned, without any false buy-now or payment claim. The website currently offers **two clearly different experiences**:
 1. A *free, ungated* look at a real RIA report created by the actual private analyzer engine exclusively from built-in fictional ROS/telemetry data. There is no upload, no customer data, no source code exposed, no false precision figure.
 2. A manual invitation to a **no-charge 14-day engineer evaluation** (initial goal: five independent users) or a commercial inquiry for a future scoped paid onboarding/team license. The public GitHub issue forms are **not** contracts, purchases, or private communications.
 
