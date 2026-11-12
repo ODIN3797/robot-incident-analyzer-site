@@ -39,7 +39,7 @@ site banner does not start or enforce a trustworthy 14-day clock.
       trial artifact. Validate it on a clean Windows 10/11 VM with a
       reliable expiration test and no-hardware fictional demo.
 - [ ] Publish only the compiled ZIP and its SHA-256 to an accessible
-      binary-distribution endpoint. The current private GitHub release
+      binary-distribution endpoint. The regular private GitHub release
       cannot be downloaded anonymously. Avoid public uploads of the Python
       zipapp because it contains extractable Python sources.
 - [ ] Verify the exact public URL returns the ZIP with correct bytes and
