@@ -112,7 +112,8 @@ class PurchasePageTests(unittest.TestCase):
         self.assertIn('id="paid-cta"', self.page)
         self.assertIn(ISSUE_BASE + "pilot_request.yml", self.page)
         self.assertIn(ISSUE_BASE + "commercial_inquiry.yml", self.page)
-        self.assertIn("does not automatically enforce a 14-day time limit", self.page.lower())
+        self.assertIn("separate 14-day windows trial exe", self.page.lower())
+        self.assertIn("not publicly downloadable", self.page.lower())
         self.assertIn("No payment will be taken", self.page)
         self.assertNotIn("stripe.com/checkout/session", self.page)
         self.assertNotIn('<form', self.page)
@@ -136,11 +137,11 @@ class PurchasePageTests(unittest.TestCase):
 
     def test_url_allowlist_rejects_fake_links_and_private_releases(self):
         for url in (
-            "https://github.com/ODIN3797/Robot-Incident-Analyzer/releases/download/v0.7.58/private.zip",
+            "https://github.com/ODIN3797/Robot-Incident-Analyzer/releases/download/v0.7.59/private.zip",
             "https://evil.example/release.zip",
             "javascript:alert(1)",
-            "https://github.com/ODIN3797/robot-incident-analyzer-site/releases/download/v0.7.58/hi.exe",
-            "https://github.com/ODIN3797/robot-incident-analyzer-site/releases/download/v0.7.58/ria-windows-0.7.58-portable.zip?token=abc",
+            "https://github.com/ODIN3797/robot-incident-analyzer-site/releases/download/v0.7.59/hi.exe",
+            "https://github.com/ODIN3797/robot-incident-analyzer-site/releases/download/v0.7.59/ria-windows-0.7.59-portable.zip?token=abc",
         ):
             self.assertFalse(trial_url(url))
         for url in (
