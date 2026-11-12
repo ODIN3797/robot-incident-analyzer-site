@@ -78,6 +78,7 @@ class LinkParser(HTMLParser):
         self.links = []
         self.forms = []
         self.scripts = []
+        self.buttons = []
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         if "id" in a:
@@ -88,6 +89,8 @@ class LinkParser(HTMLParser):
             self.scripts.append(a)
         if tag == "form":
             self.forms.append(a)
+        if tag == "button":
+            self.buttons.append(a)
 
 
 class PurchasePageTests(unittest.TestCase):
@@ -110,7 +113,15 @@ class PurchasePageTests(unittest.TestCase):
     def test_no_broken_checkout_button_or_invented_asset(self):
         self.assertIn('id="trial-cta"', self.page)
         self.assertIn('id="demo-cta"', self.page)
-        self.assertNotIn('id="paid-cta"', self.page)
+        self.assertIn('id="paid-cta"', self.page)
+        self.assertIn('COMING SOON', self.page)
+        self.assertIn('Price TBD', self.page)
+        paid = [b for b in self.parser.buttons if b.get("id") == "paid-cta"]
+        self.assertEqual(len(paid), 1)
+        self.assertIn("disabled", paid[0])
+        self.assertEqual(paid[0].get("aria-disabled"), "true")
+        self.assertNotIn("onclick", paid[0])
+        self.assertNotIn("formaction", paid[0])
         self.assertIn(ISSUE_BASE + "pilot_request.yml", self.page)
         self.assertIn(ISSUE_BASE + "commercial_inquiry.yml", self.page)
         self.assertIn("No payment required", self.page)
@@ -135,6 +146,8 @@ class PurchasePageTests(unittest.TestCase):
         self.assertNotIn('checkoutUrl(', self.page)
         self.assertNotIn('p.mode==="live_checkout"', self.page)
         self.assertNotIn('Buy an RIA license', self.page)
+        self.assertNotIn('lemonsqueezy.com/checkout/buy/', self.page)
+        self.assertNotIn('checkoutUrl(', self.page)
 
     def test_url_allowlist_rejects_fake_links_and_private_releases(self):
         for url in (
@@ -165,6 +178,9 @@ class PurchasePageTests(unittest.TestCase):
         self.assertIn("manual evaluation", self.home.lower())
         self.assertIn("try 14 days free", self.home.lower())
         self.assertNotIn("lemonsqueezy.com/checkout/buy/", self.home)
+        self.assertIn("COMING SOON", self.home)
+        self.assertIn("Buy license · Coming soon", self.home)
+        self.assertIn("No checkout or preorders", self.home)
 
     def test_public_pages_exist(self):
         for file in ("pricing.html", "privacy.html", "pilot-terms.html",
