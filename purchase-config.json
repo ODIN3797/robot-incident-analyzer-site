@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "published_app_version": "0.7.58",
+  "published_app_version": "0.7.59",
   "trial": {
     "mode": "manual_request",
     "public_download_url": null,
