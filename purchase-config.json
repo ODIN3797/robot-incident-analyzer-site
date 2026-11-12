@@ -6,7 +6,7 @@
     "public_download_url": null,
     "sha256": null,
     "automatic_14_day_expiration": false,
-    "note": "The current build does not enforce 14-day expiry. Applicants are manually approved; no binary is hosted on this site."
+    "note": "A separate Windows 14-day QA edition enforces a best-effort local expiry but has NOT been publicly distributed. The standard private v0.7.59 pilot is not a time-limited build. Application download is manual after approval and IP/security checks."
   },
   "paid": {
     "mode": "inquiry",

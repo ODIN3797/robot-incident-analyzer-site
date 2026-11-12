@@ -109,12 +109,14 @@ class PurchasePageTests(unittest.TestCase):
 
     def test_no_broken_checkout_button_or_invented_asset(self):
         self.assertIn('id="trial-cta"', self.page)
-        self.assertIn('id="paid-cta"', self.page)
+        self.assertIn('id="demo-cta"', self.page)
+        self.assertNotIn('id="paid-cta"', self.page)
         self.assertIn(ISSUE_BASE + "pilot_request.yml", self.page)
         self.assertIn(ISSUE_BASE + "commercial_inquiry.yml", self.page)
+        self.assertIn("No payment required", self.page)
         self.assertIn("separate 14-day windows trial exe", self.page.lower())
         self.assertIn("not publicly downloadable", self.page.lower())
-        self.assertIn("No payment will be taken", self.page)
+        self.assertIn("There is no payment integration or checkout", self.page)
         self.assertNotIn("stripe.com/checkout/session", self.page)
         self.assertNotIn('<form', self.page)
         self.assertNotIn('type="file"', self.page)
@@ -122,18 +124,17 @@ class PurchasePageTests(unittest.TestCase):
         self.assertEqual(len(self.parser.ids), len(set(self.parser.ids)))
         self.assertEqual(self.parser.scripts, [{}])
 
-    def test_checkout_activation_checks_exist_in_client(self):
+    def test_trial_only_activation_checks_exist_in_client(self):
         for phrase in (
-            'p.mode==="live_checkout"',
-            'p.merchant_activated===true',
-            'p.paid_license_activation_verified===true',
             't.mode==="public_download"',
             't.automatic_14_day_expiration===true',
-            'checkoutUrl(p.checkout_url)',
             'trialUrl(t.public_download_url)',
             'loadPurchaseLinks()',
         ):
             self.assertIn(phrase, self.page)
+        self.assertNotIn('checkoutUrl(', self.page)
+        self.assertNotIn('p.mode==="live_checkout"', self.page)
+        self.assertNotIn('Buy an RIA license', self.page)
 
     def test_url_allowlist_rejects_fake_links_and_private_releases(self):
         for url in (
@@ -159,9 +160,10 @@ class PurchasePageTests(unittest.TestCase):
 
     def test_homepage_has_purchase_navigation_and_no_fake_checkout(self):
         self.assertIn('href="./pricing.html"', self.home)
-        self.assertIn("Direct downloads and paid orders are not live yet", self.home)
+        self.assertIn("The Windows trial has been tested privately, but the public download is not active", self.home)
         self.assertIn("14-day", self.home.lower())
         self.assertIn("manual evaluation", self.home.lower())
+        self.assertIn("try 14 days free", self.home.lower())
         self.assertNotIn("lemonsqueezy.com/checkout/buy/", self.home)
 
     def test_public_pages_exist(self):

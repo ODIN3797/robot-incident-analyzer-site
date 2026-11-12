@@ -37,7 +37,7 @@ After receiving public feedback forms, run the local, aggregate-only [pilot feed
 
 ## Launch state (manual early access, not a completed commercial sale)
 
-The homepage now offers **two clearly different experiences**:
+The homepage prioritizes a **14-day no-payment trial** and a genuine fictional-data sample report. Checkout has been intentionally removed from the public trial-first UI pending product validation. The website currently offers **two clearly different experiences**:
 1. A *free, ungated* look at a real RIA report created by the actual private analyzer engine exclusively from built-in fictional ROS/telemetry data. There is no upload, no customer data, no source code exposed, no false precision figure.
 2. A manual invitation to a **no-charge 14-day engineer evaluation** (initial goal: five independent users) or a commercial inquiry for a future scoped paid onboarding/team license. The public GitHub issue forms are **not** contracts, purchases, or private communications.
 
