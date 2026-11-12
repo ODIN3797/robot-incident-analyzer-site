@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Robot Incident Analyzer 14-day evaluation and team licensing options. Offline ROS BAG, MCAP, DB3 and CSV incident reports.">
+<meta name="description" content="Robot Incident Analyzer: request a free 14-day evaluation, explore a real fictional-data report and preview upcoming Pro and Team licenses.">
 <title>14-Day Free Trial · Robot Incident Analyzer</title>
 <style>
 :root{color-scheme:dark;--bg:#081421;--card:#122335;--line:#334e60;--text:#eaf5fa;--muted:#a5bac9;--accent:#6ef0d1;--amber:#efc08b}
@@ -26,6 +26,12 @@ h1{font-size:clamp(2.6rem,6vw,4.55rem);letter-spacing:-.065em;line-height:1.08;m
 .layout{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:43px}
 .card{border:1px solid #375566;background:linear-gradient(130deg,#172b3c,#102031);border-radius:17px;padding:31px;display:flex;flex-direction:column;gap:14px;min-height:430px}
 .card.featured{border-color:#5baa9e;background:linear-gradient(140deg,#193d42,#102536)}
+.card.coming-soon{background:linear-gradient(140deg,#1c2c3c,#151f2c);border-color:#3c5269}
+.soon-label{display:inline-block;align-self:flex-start;border:1px solid #6f7897;background:#273048;border-radius:30px;padding:3px 10px;color:#cbd3f3;font:800 .69rem/1.6 ui-monospace,monospace;letter-spacing:.13em}
+.button:disabled{opacity:.56;cursor:not-allowed;filter:none;background:#2c3a4b;color:#c2cede;border-color:#506074}
+.card.preview{grid-column:1/-1;min-height:0;display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:24px}
+.card.preview .action{margin-top:0;min-width:270px}
+.card.preview .price{font-size:1rem;color:var(--accent)}
 .card h2{font-size:1.75rem;margin:5px 0 0;letter-spacing:-.05em}
 .card .price{color:#e9f9f6;font-size:1.8rem;font-weight:900;letter-spacing:-.05em}
 .card .price small{font-size:.76rem;font-weight:650;color:var(--muted);letter-spacing:0}
@@ -49,7 +55,7 @@ h1{font-size:clamp(2.6rem,6vw,4.55rem);letter-spacing:-.065em;line-height:1.08;m
 .disclaimer{font-size:.77rem;color:var(--muted);margin:11px 0 0}
 footer{border-top:1px solid #273f50;padding:28px 0 45px;color:var(--muted);font-size:.79rem}
 footer a{margin-right:16px}
-@media(max-width:760px){.layout,.steps{grid-template-columns:1fr}.card{min-height:auto}.navlinks{gap:10px}.navlinks a{font-size:.75rem}main{padding-top:42px}.shell{width:min(100% - 28px,1100px)}}
+@media(max-width:760px){.layout,.steps{grid-template-columns:1fr}.card{min-height:auto}.card.preview{flex-direction:column;align-items:stretch}.card.preview .action{min-width:0}.navlinks{gap:10px}.navlinks a{font-size:.75rem}main{padding-top:42px}.shell{width:min(100% - 28px,1100px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
 </style>
 </head>
@@ -63,7 +69,7 @@ footer a{margin-right:16px}
     <div class="stage" id="launch-state"><span class="dot" aria-hidden="true"></span> 14-day evaluation · manual delivery · no payments</div>
   </header>
 
-  <div class="layout" aria-label="Trial and report preview options">
+  <div class="layout" aria-label="Trial and future paid plan options">
     <article class="card featured" id="trial-card">
       <div class="eyebrow">01 / ENGINEER EVALUATION</div>
       <h2>14-day trial</h2>
@@ -80,23 +86,34 @@ footer a{margin-right:16px}
         <p class="disclaimer" id="trial-status">Currently manually approved and delivered. The regular private v0.7.59 pilot is not a time-limited build. A separate 14-day Windows trial EXE has passed internal QA but is not publicly downloadable or merchant-activated.</p>
       </div>
     </article>
-    <article class="card" id="demo-card">
-      <div class="eyebrow">02 / SAMPLE FIRST</div>
-      <h2>See the real report</h2>
-      <div class="price">Free <small>· no login needed</small></div>
-      <p>Open the actual analysis engine's HTML output from three fictional ROS/telemetry recordings. This is not a screenshot or an accuracy benchmark.</p>
+    <article class="card coming-soon" id="paid-card">
+      <div class="eyebrow">02 / PRO &amp; TEAM</div>
+      <div class="soon-label" aria-label="Paid version is coming soon">COMING SOON</div>
+      <h2>Paid license</h2>
+      <div class="price">Price TBD <small>· not available to purchase yet</small></div>
+      <p>A future commercial edition for teams using offline incident analysis. We are collecting engineering feedback before finalizing features, licensing and pricing.</p>
       <ul>
-        <li>3 fictional input files</li>
-        <li>19 candidate events and 17 investigation findings</li>
-        <li>Readable evidence and timestamps in a standalone HTML report</li>
-        <li>No payment, personal information or robot log upload</li>
+        <li>Planned commercial use and team licensing options</li>
+        <li>Licensing and delivery details to be announced</li>
+        <li>Exact features, support and pricing are not finalized</li>
+        <li>No payment is accepted or processed today</li>
       </ul>
       <div class="action">
-        <a id="demo-cta" class="button secondary" href="./demo/report.html" target="_blank" rel="noopener noreferrer">Open sample investigation report</a>
-        <p class="disclaimer">Example data is fictional. Physical robot fault detection precision and time savings have not been independently established.</p>
+        <button id="paid-cta" type="button" class="button" disabled aria-disabled="true" aria-label="Buy paid license: coming soon">Buy license · Coming soon</button>
+        <p class="disclaimer">Interested in an eventual paid release? <a href="https://github.com/ODIN3797/robot-incident-analyzer-site/issues/new?template=commercial_inquiry.yml" target="_blank" rel="noopener noreferrer">Share non-confidential team requirements</a>. This is a public GitHub issue, not a purchase, preorder or waiting-list signup.</p>
       </div>
     </article>
   </div>
+  <article class="card preview" id="demo-card">
+    <div>
+      <div class="eyebrow">03 / FREE REPORT PREVIEW</div>
+      <h2>See the real engine output</h2>
+      <p>Explore an actual RIA-generated HTML investigation report built from three fictional ROS and telemetry inputs: 19 candidate events and 17 investigation findings. No login, payment or upload required. This does not demonstrate independently validated real-robot fault accuracy.</p>
+    </div>
+    <div class="action">
+      <a id="demo-cta" class="button secondary" href="./demo/report.html" target="_blank" rel="noopener noreferrer">Open sample investigation report</a>
+    </div>
+  </article>
 
   <section class="section" aria-labelledby="workflow">
     <div class="eyebrow">START HERE</div>
