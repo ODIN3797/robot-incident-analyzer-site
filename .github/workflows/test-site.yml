@@ -21,9 +21,12 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           import re
-          html = Path('index.html').read_text(encoding='utf-8')
-          scripts = re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>', html, flags=re.S|re.I)
-          assert scripts, "Missing interactive demo"
-          Path('/tmp/ria-site.js').write_text('\n'.join(scripts), encoding='utf-8')
+          for filename in ('index.html', 'pricing.html'):
+            html = Path(filename).read_text(encoding='utf-8')
+            scripts = re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>', html, flags=re.S|re.I)
+            assert scripts, f"Missing JavaScript in {filename}"
+            out = Path('/tmp') / ('ria-' + filename + '.js')
+            out.write_text('\n'.join(scripts), encoding='utf-8')
           PY
-          node --check /tmp/ria-site.js
+          node --check /tmp/ria-index.html.js
+          node --check /tmp/ria-pricing.html.js

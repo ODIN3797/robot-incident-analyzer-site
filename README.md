@@ -5,6 +5,8 @@
 The intended Pages address is https://odin3797.github.io/robot-incident-analyzer-site/ — accessible only **after** Pages is enabled and deployed.
 
 - `index.html`: standalone public marketing page and interactive **fictional** incident explorer.
+- `pricing.html` and `purchase-config.json`: clear 14-day evaluation and paid team-license flows, with fail-closed support for future **verified** public Windows download and Lemon Squeezy checkout. Currently manual inquiries only; no functioning self-serve payment or installer download.
+- `SELF_SERVICE_COMMERCE_ROLLOUT.md`: exact business/merchant, signed trial entitlement, release asset, license activation and verification gates.
 - `demo/report.html`: **actual RIA-engine-generated** standalone HTML report created from three **fictional** inputs, not field data; 19 observations and 17 findings on the reproducible v0.7.58 build.
 - `demo/provenance.json`: source SHA, report SHA-256, analyzer version, explicit synthetic-only and withheld field precision/recall.
 - `privacy.html` and `pilot-terms.html`: public static preview data practices and manually approved evaluation scope.
@@ -37,7 +39,7 @@ The homepage now offers **two clearly different experiences**:
 1. A *free, ungated* look at a real RIA report created by the actual private analyzer engine exclusively from built-in fictional ROS/telemetry data. There is no upload, no customer data, no source code exposed, no false precision figure.
 2. A manual invitation to a **no-charge 14-day engineer evaluation** (initial goal: five independent users) or a commercial inquiry for a future scoped paid onboarding/team license. The public GitHub issue forms are **not** contracts, purchases, or private communications.
 
-The v0.7.58 Python zipapp and Windows portable EXE were independently built as versioned assets in a **private GitHub Release**. Never suggest that public issue creation grants access to that repository or its source. A manually approved evaluator needs an independently agreed private, **binary-only** distribution route and SHA-256 verification. There is **no working public checkout, license enforcement, automated approvals, payment processor, production support SLA, validated field fault precision or confirmed paying customer**.
+The v0.7.58 Python zipapp and Windows portable EXE were independently built as versioned assets in a **private GitHub Release**. Never suggest that public issue creation grants access to that repository or its source. A manually approved evaluator needs an independently agreed private, **binary-only** distribution route and SHA-256 verification. There is **no working public checkout, license enforcement, automated approvals, payment processor, production support SLA, validated field fault precision or confirmed paying customer**. The [download & pricing page](pricing.html) shows honest current status and will only change to direct links after its strict configuration gates and actual external provider setup are verified.
 
 The authentic demo report was built and source-hash-attested by the private repository automation in `scripts/build_public_preview.py`; public contents were copied from its dedicated `artifact/fictional-public-preview` branch. Do not manually invent/alter incident counts or rewrite that generated HTML; regenerate from the actual RIA engine and update `demo/provenance.json` after changing the analysis.
 

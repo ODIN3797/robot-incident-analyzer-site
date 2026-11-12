@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "published_app_version": "0.7.58",
+  "trial": {
+    "mode": "manual_request",
+    "public_download_url": null,
+    "sha256": null,
+    "automatic_14_day_expiration": false,
+    "note": "The current build does not enforce 14-day expiry. Applicants are manually approved; no binary is hosted on this site."
+  },
+  "paid": {
+    "mode": "inquiry",
+    "provider": "lemonsqueezy",
+    "checkout_url": null,
+    "merchant_activated": false,
+    "paid_license_activation_verified": false,
+    "note": "The merchant is not connected, no live payment has been made and no paid license fulfillment flow has been verified."
+  }
+}
