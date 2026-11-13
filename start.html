@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Robot Incident Analyzer | From the reel to the real logs</title>
+<meta name="description" content="Saw our warehouse robot reel? Meet Robot Incident Analyzer, an offline evidence-first ROS2 bag and robot telemetry investigation tool. Explore a fictional-data report and request a manually reviewed 14-day pilot.">
+<meta name="theme-color" content="#080e16">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Robot says NOPE. Your logs might tell a different story.">
+<meta property="og:description" content="From a fictional robot comedy reel to a real offline incident investigation workflow. Explore an RIA-generated sample report and request a 14-day evaluation.">
+<link rel="canonical" href="https://odin3797.github.io/robot-incident-analyzer-site/start.html">
+<style>
+:root{color-scheme:dark;--bg:#090f19;--panel:#111e2d;--line:#27394d;--text:#f0f7fc;--muted:#a6b8c9;--mint:#72efd1;--amber:#ffcf8e;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse 110% 44% at 50% -7%,#174c50 0,transparent 75%),var(--bg);color:var(--text);line-height:1.55}a{color:inherit}a:focus-visible{outline:3px solid var(--mint);outline-offset:3px}.wrap{width:min(670px,calc(100% - 36px));margin:0 auto}
+header{padding:22px 0;border-bottom:1px solid #ffffff19}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:850;letter-spacing:-.035em}.logo{display:grid;place-items:center;width:35px;height:35px;border-radius:10px;background:#164440;color:var(--mint);border:1px solid #418c81;font-size:14px}.brand small{display:block;color:#8eacbf;font-weight:550;font-size:11px;letter-spacing:.06em}
+main{padding:58px 0 60px}.eyebrow{font-size:12px;letter-spacing:.16em;color:var(--mint);font-weight:800;text-transform:uppercase}.hero h1{font-size:clamp(38px,7vw,61px);line-height:1.08;letter-spacing:-.07em;margin:14px 0 22px}.hero h1 em{color:var(--mint);font-style:normal}.lead{font-size:18px;color:#c6d5e2;max-width:575px;margin:0 0 22px}.disclosure{font-size:13px;color:#b1b8bb;background:#212326;border-left:3px solid var(--amber);padding:11px 14px;border-radius:7px;margin:22px 0 25px}
+.actions{display:grid;gap:11px}.btn{display:flex;justify-content:center;align-items:center;min-height:54px;border-radius:11px;font-weight:800;font-size:15px;text-decoration:none;padding:12px 16px;background:var(--mint);color:#062820;border:1px solid var(--mint);text-align:center}.btn:hover{filter:brightness(1.06)}.btn.secondary{background:transparent;color:var(--text);border-color:#4d7480}.sub{font-size:12px;color:#8ea8bd;line-height:1.6;text-align:center;margin-top:12px}
+section{margin-top:52px}.kicker{color:var(--mint);font-size:12px;text-transform:uppercase;font-weight:750;letter-spacing:.12em}h2{font-size:26px;letter-spacing:-.04em;line-height:1.18;margin:10px 0 16px}.card{background:linear-gradient(150deg,#14283a,#101a28);border:1px solid var(--line);border-radius:14px;padding:23px;margin:12px 0}.card h3{font-size:17px;margin:0 0 6px}.card p{font-size:14px;color:var(--muted);margin:0}.step{display:flex;gap:15px}.number{display:grid;place-items:center;flex:0 0 30px;height:30px;border:1px solid #417c76;border-radius:50%;color:var(--mint);font-weight:800;font-size:12px}.step>div:last-child{flex:1}.step p{margin:4px 0 0;font-size:14px;color:var(--muted)}
+.note{margin-top:25px;color:#a4bbcb;font-size:13px;line-height:1.75}.note strong{color:var(--text)}.links{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:#a8d7d3}.links a{text-underline-offset:4px}footer{padding:28px 0 44px;border-top:1px solid #223243;color:#8b9faf;font-size:12px}
+@media(max-width:430px){main{padding-top:40px}.hero h1{font-size:39px}.lead{font-size:16px}.card{padding:18px}section{margin-top:43px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="./index.html" aria-label="Robot Incident Analyzer home"><span class="logo">R·I·A</span><span>Robot Incident Analyzer<small>OFFLINE INCIDENT INVESTIGATION</small></span></a></div></header>
+<main class="wrap">
+<section class="hero" style="margin-top:0">
+<div class="eyebrow">From the robot reel · To the real product</div>
+<h1>Robot says <em>“NOPE.”</em><br>Let's inspect the logs.</h1>
+<p class="lead">The warehouse robot in our reel is a joke. <strong>Robot Incident Analyzer (RIA)</strong> is a real research-stage tool for robotics engineers who need to review incident evidence from recorded ROS2 bags and telemetry logs.</p>
+<div class="disclosure">Our social videos and on-screen error messages are AI-generated fiction. They are not real robot failures or actual RIA diagnosis results.</div>
+<div class="actions">
+<a class="btn" href="https://github.com/ODIN3797/robot-incident-analyzer-site/issues/new?template=pilot_request.yml">Request a 14-day evaluation ↗</a>
+<a class="btn secondary" href="./demo/report.html">Explore an RIA-generated sample report ↗</a>
+</div>
+<p class="sub">No payment for the pilot · Access is reviewed manually · Sample report uses fictional data</p>
+</section>
+<section aria-labelledby="what"><span class="kicker">What RIA does</span><h2 id="what">Go from scattered telemetry to evidence you can review.</h2>
+<div class="card"><h3>ROS and robot telemetry inputs</h3><p>Inspect supported ROS2 bag files and timestamped robot event/telemetry CSVs using an offline workflow.</p></div>
+<div class="card"><h3>Timeline and review findings</h3><p>Compare observed events and signals, flag candidate anomalies, and jump to supporting timestamps.</p></div>
+<div class="card"><h3>Shareable reports</h3><p>Generate HTML/JSON investigation outputs. Rules identify review candidates—not automatically verified root causes.</p></div>
+</section>
+<section aria-labelledby="how"><span class="kicker">First steps</span><h2 id="how">Try it without uploading your customer logs.</h2>
+<div class="card step"><span class="number">1</span><div><h3>Explore the example</h3><p>Open a report generated by the real analyzer from built-in fictional inputs, not a field incident.</p></div></div>
+<div class="card step"><span class="number">2</span><div><h3>Request pilot access</h3><p>Tell us your ROS/log format and investigation goal using only nonconfidential information. GitHub issue requests are public.</p></div></div>
+<div class="card step"><span class="number">3</span><div><h3>Evaluate locally</h3><p>After manual approval and separate distribution, use the Windows portable package or Python zipapp on data you have permission to analyze.</p></div></div>
+<p class="note"><strong>Current stage:</strong> Research prototype, private manual evaluation. No public one-click installer, live checkout, automatic trial activation, certified field-detection accuracy, or production SLA. Do not attach confidential logs, customer details, credentials, or proprietary message definitions to public issues.</p>
+</section>
+<section aria-labelledby="learn"><span class="kicker">More</span><h2 id="learn">Explore the full product.</h2><div class="links"><a href="./index.html">Product overview ↗</a><a href="./pricing.html">Trial &amp; plans ↗</a><a href="./PILOT_GUIDE.md">Evaluation guide ↗</a><a href="./privacy.html">Privacy ↗</a><a href="./pilot-terms.html">Pilot scope ↗</a></div></section>
+</main>
+<footer><div class="wrap">© Robot Incident Analyzer · RIA is an investigation aid, not a fault-certification or safety-control system.</div></footer>
+</body></html>
