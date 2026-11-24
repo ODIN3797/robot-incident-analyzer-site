@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Prepare a 14-day Robot Incident Analyzer evaluation request in your browser. No account needed to draft it, no payment, nothing uploaded. Submitting the request itself happens on a public GitHub issue.">
+<meta name="theme-color" content="#081421">
+<title>Prepare an evaluation request · Robot Incident Analyzer</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Prepare your 14-day RIA evaluation request">
+<meta property="og:description" content="Build your request draft locally, then submit it through the public GitHub form when you are ready.">
+<link rel="canonical" href="https://odin3797.github.io/robot-incident-analyzer-site/request.html">
+<style>
+:root{color-scheme:dark;--bg:#081421;--card:#122335;--line:#334e60;--text:#eaf5fa;--muted:#a5bac9;--accent:#6ef0d1;--amber:#efc08b;--ok:#9ce8b3}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse 85% 400px at 50% 0%,#164049,transparent 72%),var(--bg);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}
+a{color:var(--accent);text-underline-offset:4px}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #e6c17d;outline-offset:3px}
+.shell{width:min(1080px,calc(100% - 36px));margin:auto}
+nav{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:24px 0;border-bottom:1px solid #294357;flex-wrap:wrap}
+.brand{text-decoration:none;color:#f1ffff;font-size:1.02rem;font-weight:800;letter-spacing:-.035em}
+.brand span{color:var(--accent);margin-right:10px}
+.navlinks{display:flex;gap:20px;flex-wrap:wrap}
+.navlinks a{color:#bcd4dc;text-decoration:none;font-size:.86rem}
+main{padding:56px 0 84px}
+.eyebrow{font-size:.75rem;font-weight:850;letter-spacing:.17em;color:var(--accent)}
+h1{font-size:clamp(2.2rem,5vw,3.5rem);letter-spacing:-.06em;line-height:1.1;margin:16px 0 18px}
+.lead{color:var(--muted);font-size:1rem;line-height:1.8;max-width:760px}
+.notice{border:1px solid #6a5a3d;border-left:3px solid var(--amber);background:#241f18;border-radius:8px;padding:13px 16px;color:#f0dfc3;font-size:.86rem;margin:22px 0 0}
+.notice strong{color:#ffe7c2}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:22px;margin-top:34px;align-items:start}
+fieldset{border:0;padding:0;margin:0 0 22px}
+legend{font-size:.74rem;font-weight:850;letter-spacing:.15em;color:#bcd9d3;text-transform:uppercase;margin-bottom:10px;padding:0}
+.options{display:grid;gap:8px}
+.option{display:flex;gap:11px;align-items:flex-start;border:1px solid var(--line);background:#11202e;border-radius:11px;padding:11px 13px;cursor:pointer;font-size:.9rem;color:#dcebf2}
+.option:hover{border-color:#4b7a86;background:#152a3a}
+.option input{margin:3px 0 0;accent-color:var(--accent);flex:none;width:16px;height:16px}
+.option:has(input:checked){border-color:var(--accent);background:#14363a}
+.panel h2{font-size:1.05rem;margin:0 0 14px;letter-spacing:-.02em}
+.card{border:1px solid #375566;background:linear-gradient(130deg,#172b3c,#102031);border-radius:16px;padding:24px}
+.card.sticky{position:sticky;top:18px}
+.consent{display:flex;gap:11px;align-items:flex-start;font-size:.86rem;color:#cfdee6;border:1px dashed #4d6b7d;border-radius:11px;padding:12px 13px;margin:16px 0 0}
+.consent input{margin:3px 0 0;width:16px;height:16px;accent-color:var(--accent);flex:none}
+.draft{white-space:pre-wrap;word-break:break-word;font:12.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;background:#0a1622;border:1px solid #294357;border-radius:11px;padding:14px;color:#c9dee7;max-height:290px;overflow:auto;margin:12px 0 0}
+.actions{display:grid;gap:9px;margin-top:14px}
+.button{display:flex;justify-content:center;align-items:center;gap:8px;min-height:48px;border-radius:11px;border:1px solid var(--accent);background:var(--accent);color:#062a26;font:800 .93rem/1.2 inherit;padding:11px 16px;text-decoration:none;cursor:pointer;text-align:center}
+.button.secondary{background:transparent;color:var(--text);border-color:#4d7480}
+.button:disabled{opacity:.45;cursor:not-allowed}
+.status{font-size:.82rem;color:#9db4c2;margin:12px 0 0;min-height:38px}
+.status[data-tone="ready"]{color:var(--ok)}
+.status[data-tone="pending"]{color:var(--amber)}
+.after{margin-top:36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.after article{border:1px solid #2e4a5c;background:#101f2d;border-radius:13px;padding:18px}
+.after h3{font-size:.95rem;margin:0 0 8px}
+.after p,.after li{font-size:.85rem;color:var(--muted);line-height:1.65}
+.after ol{margin:8px 0 0;padding-left:20px}
+.limits{margin-top:16px;border:1px solid #4a3f52;background:#1b1a26;border-radius:13px;padding:18px}
+.limits h2{font-size:1rem;margin:0 0 10px;color:#ecdcf5}
+.limits ul{margin:0;padding-left:20px;font-size:.85rem;color:#c9c0d6;line-height:1.7}
+.privacy{margin-top:16px;font-size:.82rem;color:#9db4c2;line-height:1.7}
+footer{padding:26px 0 46px;border-top:1px solid #223243;color:#8b9faf;font-size:.78rem}
+@media(max-width:880px){.layout{grid-template-columns:1fr}.card.sticky{position:static}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="shell">
+<nav aria-label="Site">
+<a class="brand" href="./index.html" aria-label="Robot Incident Analyzer home"><span>R·I·A</span>Robot Incident Analyzer</a>
+<div class="navlinks">
+<a href="./index.html">Product</a>
+<a href="./pricing.html">Trial &amp; plans</a>
+<a href="./report-guide.html">Read a report</a>
+<a href="./first-15-minutes.html">First 15 minutes</a>
+</div>
+</nav>
+<main id="top">
+<div class="eyebrow">14-day evaluation · manual approval · no payment</div>
+<h1>Prepare your evaluation request.</h1>
+<p class="lead">Four answers are enough for a first review. You can build and copy the request here without an account. It is submitted only when you post it in the public GitHub form — this page has no server, sends nothing, and stores nothing on your device.</p>
+<p class="notice"><strong>Why a GitHub step?</strong> The only verified submission channel today is a public GitHub issue, so a GitHub account is required at that last step. Until a private channel is verified, this site never claims that your request was received.</p>
+
+<div class="layout">
+<section class="panel" aria-labelledby="builder-heading">
+<h2 id="builder-heading" class="eyebrow" style="font-size:.74rem;color:#bcd9d3">Build a request locally</h2>
+<div id="pilot-builder">
+<fieldset>
+<legend>1. Your robotics role</legend>
+<div class="options">
+<label class="option"><input type="radio" name="role" value="ROS / robot software engineer"><span>ROS / robot software engineer</span></label>
+<label class="option"><input type="radio" name="role" value="AMR / AGV integration engineer"><span>AMR / AGV integration engineer</span></label>
+<label class="option"><input type="radio" name="role" value="Robotics researcher or student"><span>Robotics researcher or student</span></label>
+<label class="option"><input type="radio" name="role" value="Other"><span>Other</span></label>
+</div>
+</fieldset>
+<fieldset>
+<legend>2. Preferred pilot environment</legend>
+<div class="options">
+<label class="option"><input type="radio" name="environment" value="Windows 10/11 (portable EXE, no Python)"><span>Windows 10/11 — unsigned portable EXE, no Python needed</span></label>
+<label class="option"><input type="radio" name="environment" value="Linux (Python 3.10+ zipapp)"><span>Linux — Python 3.10+ zipapp</span></label>
+<label class="option"><input type="radio" name="environment" value="macOS (Python 3.10+ zipapp)"><span>macOS — Python 3.10+ zipapp</span></label>
+<label class="option"><input type="radio" name="environment" value="Windows (Python 3.10+ zipapp)"><span>Windows — Python 3.10+ zipapp instead of the EXE</span></label>
+<label class="option"><input type="radio" name="environment" value="Browser walkthrough only (no private executable)"><span>Browser walkthrough only — no private executable</span></label>
+</div>
+</fieldset>
+<fieldset>
+<legend>3. Recording you would analyze</legend>
+<div class="options">
+<label class="option"><input type="radio" name="input" value="ROS2 MCAP"><span>ROS2 MCAP</span></label>
+<label class="option"><input type="radio" name="input" value="ROS2 DB3"><span>ROS2 DB3</span></label>
+<label class="option"><input type="radio" name="input" value="ROS1 BAG"><span>ROS1 BAG</span></label>
+<label class="option"><input type="radio" name="input" value="CSV telemetry"><span>CSV telemetry</span></label>
+<label class="option"><input type="radio" name="input" value="Just the synthetic demo first"><span>Just the synthetic demo first</span></label>
+</div>
+</fieldset>
+<fieldset>
+<legend>4. What you want to investigate</legend>
+<div class="options">
+<label class="option"><input type="radio" name="goal" value="Review navigation incidents with command vs odometry context"><span>Navigation incidents — commanded motion versus measured motion</span></label>
+<label class="option"><input type="radio" name="goal" value="Investigate localization jumps or position discontinuities"><span>Localization jumps or position discontinuities</span></label>
+<label class="option"><input type="radio" name="goal" value="Check power and battery telemetry around an unexpected stop"><span>Power and battery telemetry around an unexpected stop</span></label>
+<label class="option"><input type="radio" name="goal" value="Review a general robot incident chronology"><span>A general incident chronology</span></label>
+<label class="option"><input type="radio" name="goal" value="Understand the workflow on the synthetic sample first"><span>Understand the workflow on the sample first</span></label>
+</div>
+</fieldset>
+<label class="consent" for="pilot-consent"><input type="checkbox" id="pilot-consent"><span>I understand that the GitHub submission is public, and I will not include private logs, contact details, company or customer names, or confidential information.</span></label>
+</div>
+<p class="privacy">Only these fixed answers are used. There is no free-text field, no email or phone field, no file upload, no analytics script and no storage on this device. Nothing reaches RIA servers because this page has none.</p>
+</section>
+
+<aside class="card sticky" aria-labelledby="draft-heading">
+<h2 id="draft-heading">Your draft</h2>
+<p class="privacy" style="margin-top:0">Nothing is submitted from this page. Choose all four answers and tick the notice to enable the buttons.</p>
+<pre class="draft" id="pilot-draft" aria-live="polite">Choose all four options and confirm the public-submission notice to generate your draft.</pre>
+<p class="status" id="pilot-status" role="status" aria-live="polite">Nothing has been sent. This page has no server and stores nothing.</p>
+<div class="actions">
+<button class="button" type="button" id="pilot-copy" disabled>Copy request draft</button>
+<button class="button secondary" type="button" id="pilot-github" disabled>Review the prefilled GitHub form ↗</button>
+<a class="button secondary" id="pilot-github-fallback" href="https://github.com/ODIN3797/robot-incident-analyzer-site/issues/new?template=pilot_request.yml" target="_blank" rel="noopener noreferrer">Open the empty public form ↗</a>
+</div>
+<p class="privacy" id="pilot-fallback-note">Buttons stay disabled until your draft is complete. The plain link above always works, with or without JavaScript.</p>
+</aside>
+</div>
+
+<section class="after" aria-labelledby="next-heading">
+<div>
+<h2 id="next-heading" class="eyebrow" style="font-size:.74rem">What happens next</h2>
+<article style="margin-top:12px">
+<ol>
+<li><strong>You post the public issue.</strong> GitHub prefills the three dropdown answers from your draft. Paste the goal sentence into “What is the main problem you want to solve?” if it is not carried over.</li>
+<li><strong>Manual review.</strong> A request does not guarantee approval or immediate access, and there is no automatic activation.</li>
+<li><strong>Private delivery is arranged separately.</strong> Approved evaluators agree a secure binary-only channel and the evaluation terms off this site.</li>
+<li><strong>You investigate locally.</strong> Run the pilot package on recordings you are permitted to analyze.</li>
+</ol>
+</article>
+</div>
+<div>
+<h2 class="eyebrow" style="font-size:.74rem">Before you apply</h2>
+<article style="margin-top:12px">
+<p><a href="./demo/report.html" target="_blank" rel="noopener noreferrer">Open the engine-generated sample report ↗</a></p>
+<p>Its input data is wholly fictional. The sample was produced by the RIA engine at analyzer version 0.7.58; the private evaluation package is a separate 0.7.59 build.</p>
+<p><a href="./report-guide.html">How to read an RIA report</a> · <a href="./first-15-minutes.html">Your first 15 minutes</a> · <a href="./PILOT_GUIDE.md">Full evaluation guide</a></p>
+</article>
+</div>
+</section>
+
+<section class="limits" aria-labelledby="limits-heading">
+<h2 id="limits-heading">What RIA does not do</h2>
+<ul>
+<li>It does not automatically determine a verified physical root cause.</li>
+<li>It is not a safety controller, a certified diagnostic system or a certification of robot health.</li>
+<li>It does not provide continuous fleet monitoring through this website.</li>
+<li>It does not offer public executable downloads, live checkout or automatic trial activation.</li>
+<li>Real-world physical-fault precision and recall have not been independently established.</li>
+</ul>
+<p class="privacy">The evaluation is free for 14 days and no payment is taken. Paid Pro / Team licensing is shown as coming soon and cannot be purchased.</p>
+</section>
+</main>
+<footer>© Robot Incident Analyzer · RIA is an investigation aid, not a fault-certification or safety-control system.</footer>
+</div>
+<script src="./scripts/pilot_request.js" defer></script>
+</body>
+</html>
