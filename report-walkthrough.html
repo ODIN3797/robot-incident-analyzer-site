@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A three-exercise guided walkthrough of a real RIA-generated report from wholly fictional recordings: follow timestamps, open the evidence entries, and see what the analyzer can and cannot establish.">
+<meta name="theme-color" content="#081421">
+<title>Guided report walkthrough · Robot Incident Analyzer</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find the evidence. Question the cause.">
+<meta property="og:description" content="Three short exercises on an authentic RIA-generated report from fictional inputs. No account, nothing submitted.">
+<link rel="canonical" href="https://odin3797.github.io/robot-incident-analyzer-site/report-walkthrough.html">
+<style>
+:root{color-scheme:dark;--bg:#081421;--text:#eaf5fa;--muted:#a5bac9;--accent:#6ef0d1;--amber:#efc08b;--line:#334e60}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse 85% 400px at 50% 0%,#164049,transparent 72%),var(--bg);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}
+a{color:var(--accent);text-underline-offset:4px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #e6c17d;outline-offset:3px}
+.shell{width:min(1000px,calc(100% - 36px));margin:auto}
+nav{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:24px 0;border-bottom:1px solid #294357;flex-wrap:wrap}
+.brand{text-decoration:none;color:#f1ffff;font-size:1.02rem;font-weight:800;letter-spacing:-.035em}
+.brand span{color:var(--accent);margin-right:10px}
+.navlinks{display:flex;gap:20px;flex-wrap:wrap}
+.navlinks a{color:#bcd4dc;text-decoration:none;font-size:.86rem}
+main{padding:48px 0 84px}
+.eyebrow{font-size:.75rem;font-weight:850;letter-spacing:.17em;color:var(--accent)}
+h1{font-size:clamp(2.1rem,5vw,3.3rem);letter-spacing:-.06em;line-height:1.1;margin:16px 0 18px}
+h2{font-size:clamp(1.15rem,2.6vw,1.5rem);letter-spacing:-.03em;margin:0 0 10px}
+h2:focus-visible{outline:3px solid #e6c17d;outline-offset:4px}
+.lead{color:var(--muted);font-size:1rem;line-height:1.8;max-width:790px}
+.note{border:1px solid #6a5a3d;border-left:3px solid var(--amber);background:#241f18;border-radius:8px;padding:13px 16px;color:#f0dfc3;font-size:.86rem;margin:18px 0 0}
+.bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:30px 0 0;padding:16px 18px;border:1px solid var(--line);background:linear-gradient(130deg,#172b3c,#102031);border-radius:14px}
+.bar progress{width:150px;height:12px;accent-color:var(--accent)}
+.bar .count{font-weight:800;font-size:.9rem}
+.bar .status{margin:0;color:var(--muted);font-size:.85rem;flex:1 1 240px}
+.steps{display:grid;gap:16px;margin:22px 0 0}
+.step-card{border:1px solid #2e4a5c;background:#101f2d;border-radius:14px;padding:24px}
+.step-tag{margin:0 0 10px;font-size:.75rem;font-weight:850;letter-spacing:.14em;color:var(--accent)}
+.meta{margin:0 0 14px;font:700 .82rem/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--amber)}
+.step-card p{font-size:.92rem;color:var(--muted);line-height:1.75;margin:0 0 12px}
+.step-card p strong{color:var(--text)}
+.step-card code{background:#0b1725;border:1px solid #2b4256;border-radius:5px;padding:1px 5px;font-size:.86em;color:#c6f4e9}
+.step-card p.important{color:#f0dfc3;border-left:3px solid #6a5a3d;padding-left:12px}
+.evidence{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-wrap:wrap;gap:9px}
+.evidence a{display:inline-flex;align-items:center;min-height:44px;padding:9px 14px;border:1px solid #4d7480;border-radius:10px;font-size:.85rem;font-weight:750;text-decoration:none}
+.review{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--text);border-top:1px solid #264254;padding-top:14px}
+.review input{width:20px;height:20px;margin:2px 0 0;flex:none;accent-color:var(--accent)}
+.controls{display:flex;gap:11px;flex-wrap:wrap;margin:22px 0 0}
+.controls button{min-height:48px;min-width:150px;border-radius:11px;border:1px solid #4d7480;background:transparent;color:var(--text);font:inherit;font-weight:800;font-size:.92rem;padding:11px 18px;cursor:pointer}
+.controls button:disabled{opacity:.45;cursor:not-allowed}
+#walk-complete{margin:24px 0 0;border:1px solid #417c76;background:#0f2622;border-radius:14px;padding:22px}
+#walk-complete p{font-size:.9rem;color:var(--muted);line-height:1.75;margin:0 0 10px}
+#walk-complete p:last-child{margin-bottom:0}
+#walk-complete strong{color:var(--accent)}
+.section{margin-top:40px}
+.section p,.section li{font-size:.88rem;color:var(--muted);line-height:1.75}
+.section ul{padding-left:20px;margin:8px 0 0}
+.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:32px}
+.button{display:inline-flex;justify-content:center;align-items:center;min-height:48px;border-radius:11px;border:1px solid var(--accent);background:var(--accent);color:#062a26;font-weight:800;font-size:.92rem;padding:11px 18px;text-decoration:none}
+.button.secondary{background:transparent;color:var(--text);border-color:#4d7480}
+footer{padding:26px 0 46px;border-top:1px solid #223243;color:#8b9faf;font-size:.78rem}
+@media(max-width:600px){main{padding:32px 0 64px}.step-card{padding:18px}.bar{padding:14px}.evidence a{width:100%}.controls button{flex:1 1 140px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="shell">
+<nav aria-label="Site">
+<a class="brand" href="./index.html" aria-label="Robot Incident Analyzer home"><span>R·I·A</span>Robot Incident Analyzer</a>
+<div class="navlinks">
+<a href="./index.html">Product</a>
+<a href="./pricing.html">Trial &amp; plans</a>
+<a href="./report-guide.html">Read a report</a>
+<a href="./request.html">Prepare a request</a>
+</div>
+</nav>
+<main id="top">
+<div class="eyebrow">RIA · guided walkthrough</div>
+<h1>Find the evidence. Question the cause.</h1>
+<p class="lead">Three short exercises using an authentic RIA-generated report from fictional recordings. Follow timestamps, inspect the evidence entries the report links to, and see what the analyzer can — and cannot — establish.</p>
+<p class="note">The sample report was produced by RIA v0.7.58 from wholly fictional inputs. This is an educational walkthrough of one sample; it is not a test of real-world fault-detection accuracy, and nothing here is a confirmed diagnosis.</p>
+
+<div class="bar">
+<progress id="walk-progress" max="3" value="0" aria-labelledby="walk-status">0 of 3</progress>
+<span class="count">Exercise <span id="walk-step-count">1</span> of 3</span>
+<p class="status" id="walk-status" role="status" aria-live="polite">0 of 3 exercises marked reviewed. Nothing has been submitted.</p>
+</div>
+
+<div class="steps">
+<section class="step-card" data-walk-step="1" aria-labelledby="step-1-title">
+<p class="step-tag">Exercise 1 of 3 · DOCK</p>
+<h2 id="step-1-title" tabindex="-1">Docking success, charging error</h2>
+<p class="meta">Incident I004 · recorded 2026-10-10T10:00:47.000Z UTC · Finding “Charging issue after successful docking” (HIGH)</p>
+<p>Start with <code>E0009</code> at 2026-10-10T10:00:40.000Z (INFO, <code>DOCK_SUCCESS</code>): “Docking success; robot aligned.” Then inspect <code>E0010</code> at 2026-10-10T10:00:47.000Z (ERROR, <code>CHARGING</code>): “Charging current is 0 A after docking.”</p>
+<p><strong>Look for:</strong> the order of the two messages, their timestamps, and the difference between a reported docking state and an independently verified physical charging state.</p>
+<p><strong>Ask yourself:</strong> which charger status, battery-current or contact-alignment evidence would you still need before calling this a charging fault?</p>
+<p class="important"><strong>Important:</strong> the report records that a docking-success log preceded a charging error. Physical alignment and charging contact are not independently verified, so the finding stays a candidate.</p>
+<ul class="evidence">
+<li><a href="./demo/report.html#incident-I004" target="_blank" rel="noopener noreferrer">Open Incident I004 in a new tab ↗</a></li>
+<li><a href="./demo/report.html#event-E0009" target="_blank" rel="noopener noreferrer">Open E0009 docking success in a new tab ↗</a></li>
+<li><a href="./demo/report.html#event-E0010" target="_blank" rel="noopener noreferrer">Open E0010 charging error in a new tab ↗</a></li>
+</ul>
+<label class="review"><input type="checkbox" data-review-check="1"> I reviewed these fictional evidence entries.</label>
+</section>
+
+<section class="step-card" data-walk-step="2" aria-labelledby="step-2-title">
+<p class="step-tag">Exercise 2 of 3 · NAV</p>
+<h2 id="step-2-title" tabindex="-1">Communication warnings before a navigation abort</h2>
+<p class="meta">Incident I003 · recorded 2026-10-10T10:00:15.000Z → 2026-10-10T10:00:22.000Z UTC · Finding “Navigation failure follows another anomaly” (HIGH)</p>
+<p>Read <code>E0006</code> at 2026-10-10T10:00:15.000Z (WARN, <code>COMMUNICATION</code>): “Network packet loss started.” Then <code>E0007</code> at 2026-10-10T10:00:18.000Z (ERROR, <code>TIMEOUT</code>): “MQTT request timeout after 3 retries.” Then <code>E0008</code> at 2026-10-10T10:00:22.000Z (ERROR, <code>NAVIGATION</code>): “Navigation goal aborted by controller.”</p>
+<p><strong>Look for:</strong> the sequence and the spacing between the three recorded events, and which robot and node each one belongs to.</p>
+<p><strong>Ask yourself:</strong> which controller-state, clock or connectivity evidence would let you test whether the earlier warning is related at all?</p>
+<p class="important"><strong>Important:</strong> an earlier anomaly is not proof that it caused a later navigation failure. Timestamp proximity only puts them in the same place to look.</p>
+<ul class="evidence">
+<li><a href="./demo/report.html#incident-I003" target="_blank" rel="noopener noreferrer">Open Incident I003 in a new tab ↗</a></li>
+<li><a href="./demo/report.html#event-E0006" target="_blank" rel="noopener noreferrer">Open E0006 packet loss in a new tab ↗</a></li>
+<li><a href="./demo/report.html#event-E0007" target="_blank" rel="noopener noreferrer">Open E0007 MQTT timeout in a new tab ↗</a></li>
+<li><a href="./demo/report.html#event-E0008" target="_blank" rel="noopener noreferrer">Open E0008 navigation abort in a new tab ↗</a></li>
+</ul>
+<label class="review"><input type="checkbox" data-review-check="2"> I reviewed these fictional evidence entries.</label>
+</section>
+
+<section class="step-card" data-walk-step="3" aria-labelledby="step-3-title">
+<p class="step-tag">Exercise 3 of 3 · MOTION</p>
+<h2 id="step-3-title" tabindex="-1">Commanded velocity versus odometry</h2>
+<p class="meta">Incident I001 · recorded 2026-10-10T12:00:00.250Z → 2026-10-10T12:00:01.410Z UTC · Finding “Commanded velocity diverges from odometry” (MEDIUM)</p>
+<p>The report links this finding to <code>E0015</code> at 2026-10-10T12:00:00.310Z (WARN, <code>CMD_ODOM_MISMATCH</code>): “/cmd_vel: command 0.50 m/s vs /odom: odom 0.00 m/s for 0.30s. Check safety state, command source and frame/timing alignment.”</p>
+<p><strong>Look for:</strong> what was commanded, what the odometry recorded, and how long the two disagreed — then read the follow-up checks printed with the finding.</p>
+<p><strong>Ask yourself:</strong> was motion enabled, were units and timestamps aligned, and is the robot's actual physical movement known from this recording at all?</p>
+<p class="important"><strong>Important:</strong> these observations do not establish a verified mechanical or software root cause. The finding is rated MEDIUM and its evidence status is “direct observed signal / root cause not verified”.</p>
+<p><strong>Adjacent context:</strong> <code>E0014</code> at 2026-10-10T12:00:00.250Z (WARN, <code>TF_MAP_ODOM_JUMP</code>) records “map -&gt; odom moved 1.50 m over 0.200 s; may reflect localization correction.” It sits in the same incident window as <code>E0015</code>, but the report does not list it as direct evidence for this finding and it is not proof that the transform change caused the velocity mismatch.</p>
+<ul class="evidence">
+<li><a href="./demo/report.html#incident-I001" target="_blank" rel="noopener noreferrer">Open Incident I001 in a new tab ↗</a></li>
+<li><a href="./demo/report.html#event-E0015" target="_blank" rel="noopener noreferrer">Open E0015 command/odometry mismatch in a new tab ↗</a></li>
+<li><a href="./demo/report.html#event-E0014" target="_blank" rel="noopener noreferrer">Open E0014 transform change as adjacent context ↗</a></li>
+</ul>
+<label class="review"><input type="checkbox" data-review-check="3"> I reviewed these fictional evidence entries.</label>
+</section>
+</div>
+
+<div class="controls">
+<button type="button" id="walk-prev" disabled>Previous exercise</button>
+<button type="button" id="walk-next">Next exercise</button>
+</div>
+
+<div id="walk-complete" hidden>
+<h2>All three exercises marked reviewed.</h2>
+<p>Your checklist reflects your own review. It is not an assessment result, a confirmed diagnosis, or a submitted evaluation request.</p>
+<p><strong>Nothing has been submitted.</strong> Reloading this page clears the three checkboxes; this page stores nothing on your device and sends nothing anywhere.</p>
+<p><a href="./request.html">Prepare an evaluation request</a> — you can build and copy a draft without an account. Actually submitting it requires a public GitHub issue and manual review.</p>
+</div>
+
+<section class="section" aria-labelledby="limits-heading">
+<h2 id="limits-heading">What this sample cannot establish</h2>
+<ul>
+<li>No finding does not mean the robot operated normally — coverage is a separate question.</li>
+<li>Events close together in time do not establish causation.</li>
+<li>Missing topics and partial recordings can hide incidents.</li>
+<li>A report generated from fictional inputs does not establish real-world detection accuracy.</li>
+<li>Marking an exercise as reviewed does not verify anything for anyone else.</li>
+</ul>
+</section>
+
+<div class="actions">
+<a class="button" href="./request.html">Prepare an evaluation request</a>
+<a class="button secondary" href="./report-guide.html">How to read a report</a>
+<a class="button secondary" href="./demo/report.html" target="_blank" rel="noopener noreferrer">Open the sample report ↗</a>
+</div>
+</main>
+<footer>© Robot Incident Analyzer · Fictional-input sample · Guided reading exercise, not evidence of real-world detection accuracy.</footer>
+</div>
+<script src="./scripts/report_walkthrough.js" defer></script>
+</body>
+</html>
