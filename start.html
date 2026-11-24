@@ -12,29 +12,29 @@
 <link rel="canonical" href="https://odin3797.github.io/robot-incident-analyzer-site/start.html">
 <style>
 :root{color-scheme:dark;--bg:#090f19;--panel:#111e2d;--line:#27394d;--text:#f0f7fc;--muted:#a6b8c9;--mint:#72efd1;--amber:#ffcf8e;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse 110% 44% at 50% -7%,#174c50 0,transparent 75%),var(--bg);color:var(--text);line-height:1.55}a{color:inherit}a:focus-visible{outline:3px solid var(--mint);outline-offset:3px}.wrap{width:min(670px,calc(100% - 36px));margin:0 auto}
-header{padding:22px 0;border-bottom:1px solid #ffffff19}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:850;letter-spacing:-.035em}.logo{display:grid;place-items:center;width:35px;height:35px;border-radius:10px;background:#164440;color:var(--mint);border:1px solid #418c81;font-size:14px}.brand small{display:block;color:#8eacbf;font-weight:550;font-size:11px;letter-spacing:.06em}
-main{padding:58px 0 60px}.eyebrow{font-size:12px;letter-spacing:.16em;color:var(--mint);font-weight:800;text-transform:uppercase}.hero h1{font-size:clamp(38px,7vw,61px);line-height:1.08;letter-spacing:-.07em;margin:14px 0 22px}.hero h1 em{color:var(--mint);font-style:normal}.lead{font-size:18px;color:#c6d5e2;max-width:575px;margin:0 0 22px}.disclosure{font-size:13px;color:#b1b8bb;background:#212326;border-left:3px solid var(--amber);padding:11px 14px;border-radius:7px;margin:22px 0 25px}
-.actions{display:grid;gap:11px}.btn{display:flex;justify-content:center;align-items:center;min-height:54px;border-radius:11px;font-weight:800;font-size:15px;text-decoration:none;padding:12px 16px;background:var(--mint);color:#062820;border:1px solid var(--mint);text-align:center}.btn:hover{filter:brightness(1.06)}.btn.secondary{background:transparent;color:var(--text);border-color:#4d7480}.sub{font-size:12px;color:#8ea8bd;line-height:1.6;text-align:center;margin-top:12px}
-section{margin-top:52px}.kicker{color:var(--mint);font-size:12px;text-transform:uppercase;font-weight:750;letter-spacing:.12em}h2{font-size:26px;letter-spacing:-.04em;line-height:1.18;margin:10px 0 16px}.card{background:linear-gradient(150deg,#14283a,#101a28);border:1px solid var(--line);border-radius:14px;padding:23px;margin:12px 0}.card h3{font-size:17px;margin:0 0 6px}.card p{font-size:14px;color:var(--muted);margin:0}.step{display:flex;gap:15px}.number{display:grid;place-items:center;flex:0 0 30px;height:30px;border:1px solid #417c76;border-radius:50%;color:var(--mint);font-weight:800;font-size:12px}.step>div:last-child{flex:1}.step p{margin:4px 0 0;font-size:14px;color:var(--muted)}
-.note{margin-top:25px;color:#a4bbcb;font-size:13px;line-height:1.75}.note strong{color:var(--text)}.links{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:#a8d7d3}.links a{text-underline-offset:4px}footer{padding:28px 0 44px;border-top:1px solid #223243;color:#8b9faf;font-size:12px}
-@media(max-width:430px){main{padding-top:40px}.hero h1{font-size:39px}.lead{font-size:16px}.card{padding:18px}section{margin-top:43px}}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse 110% 40% at 50% -8%,#174c50 0,transparent 75%),var(--bg);color:var(--text);line-height:1.55}a{color:inherit}a:focus-visible{outline:3px solid var(--mint);outline-offset:3px}.wrap{width:min(670px,calc(100% - 32px));margin:0 auto}
+header{padding:14px 0;border-bottom:1px solid #ffffff19}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:850;letter-spacing:-.035em}.logo{display:grid;place-items:center;width:35px;height:35px;border-radius:10px;background:#164440;color:var(--mint);border:1px solid #418c81;font-size:14px}.brand small{display:block;color:#8eacbf;font-weight:550;font-size:11px;letter-spacing:.06em}
+main{padding:24px 0 56px}.eyebrow{font-size:11px;letter-spacing:.15em;color:var(--mint);font-weight:800;text-transform:uppercase;margin:0}.hero h1{font-size:clamp(30px,6.6vw,56px);line-height:1.1;letter-spacing:-.045em;margin:10px 0 14px;overflow-wrap:break-word}.hero h1 em{color:var(--mint);font-style:normal}.lead{font-size:17px;color:#c6d5e2;max-width:575px;margin:0 0 14px}.lead strong{color:var(--text)}.disclosure{font-size:12.5px;line-height:1.6;color:#c3cbcf;background:#212326;border-left:3px solid var(--amber);padding:9px 12px;border-radius:7px;margin:0 0 16px}
+.actions{display:grid;gap:10px}.btn{display:flex;justify-content:center;align-items:center;min-height:50px;border-radius:11px;font-weight:800;font-size:15px;text-decoration:none;padding:12px 16px;background:var(--mint);color:#062820;border:1px solid var(--mint);text-align:center}.btn:hover{filter:brightness(1.06)}.btn.secondary{background:transparent;color:var(--text);border-color:#4d7480}.sub{font-size:12px;color:#8ea8bd;line-height:1.6;text-align:center;margin:10px 0 0}.sub a{color:#a8d7d3;text-underline-offset:3px}.hint{font-size:13px;text-align:center;margin:10px 0 0;color:#a8d7d3}.hint a{text-underline-offset:3px}
+section{margin-top:44px}.kicker{color:var(--mint);font-size:12px;text-transform:uppercase;font-weight:750;letter-spacing:.12em}h2{font-size:26px;letter-spacing:-.04em;line-height:1.18;margin:10px 0 16px}.card{background:linear-gradient(150deg,#14283a,#101a28);border:1px solid var(--line);border-radius:14px;padding:22px;margin:12px 0}.card h3{font-size:17px;margin:0 0 6px}.card p{font-size:14px;color:var(--muted);margin:0}.card p + .btn{margin-top:14px}.step{display:flex;gap:15px}.number{display:grid;place-items:center;flex:0 0 30px;height:30px;border:1px solid #417c76;border-radius:50%;color:var(--mint);font-weight:800;font-size:12px}.step>div:last-child{flex:1}.step p{margin:4px 0 0;font-size:14px;color:var(--muted)}
+.note{margin-top:25px;color:#a4bbcb;font-size:13px;line-height:1.75}.note strong{color:var(--text)}.links{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:#a8d7d3}.links a{text-underline-offset:4px}footer{padding:26px 0 40px;border-top:1px solid #223243;color:#8b9faf;font-size:12px}
+@media(min-width:700px){header{padding:20px 0}main{padding:44px 0 64px}.hero h1{margin:14px 0 20px}.lead{font-size:18px;margin-bottom:18px}.actions{gap:11px}.btn{min-height:54px}section{margin-top:52px}}
 </style>
 </head>
 <body>
 <header><div class="wrap"><a class="brand" href="./index.html" aria-label="Robot Incident Analyzer home"><span class="logo">R·I·A</span><span>Robot Incident Analyzer<small>OFFLINE INCIDENT INVESTIGATION</small></span></a></div></header>
 <main class="wrap">
 <section class="hero" style="margin-top:0">
-<div class="eyebrow">From the robot reel · To the real product</div>
-<h1>Robot says <em>“NOPE.”</em><br>Let's inspect the logs.</h1>
-<p class="lead">The warehouse robot in our reel is a joke. <strong>Robot Incident Analyzer (RIA)</strong> is a real research-stage tool for robotics engineers who need to review incident evidence from recorded ROS2 bags and telemetry logs.</p>
-<div class="disclosure">Our social videos and on-screen error messages are AI-generated fiction. They are not real robot failures or actual RIA diagnosis results.</div>
+<p class="eyebrow">From robot comedy to engineering</p>
+<h1>When robots act weird, follow the logs.</h1>
+<p class="lead"><strong>Robot Incident Analyzer (RIA)</strong> is an experimental offline tool for reviewing ROS recordings and robot telemetry. Explore candidate anomalies, timestamps, and supporting evidence in an investigation report.</p>
+<p class="disclosure">Our AI robot videos are fictional comedy. The sample report is genuine RIA engine output generated from fictional data — not a verified field diagnosis.</p>
 <div class="actions">
-<a class="btn" href="./demo/report.html">Explore the sample report ↗</a>
-<a class="btn secondary" href="./request.html">Prepare an evaluation request (no account)</a>
-<a class="btn secondary" href="#request">Request an evaluation ↓</a>
+<a class="btn" href="./demo/report.html">Explore the sample report</a>
+<a class="btn secondary" href="./request.html">Prepare an evaluation request</a>
 </div>
-<p class="sub">Sample report: no account or download needed · Fictional input data</p>
+<p class="sub">No account needed to view the report or prepare a draft. A GitHub account is required to submit a public request.</p>
+<p class="hint"><a href="./report-guide.html">New to incident reports? Learn how to read this sample.</a></p>
 </section>
 <section aria-labelledby="what"><span class="kicker">What RIA does</span><h2 id="what">Go from scattered telemetry to evidence you can review.</h2>
 <div class="card"><h3>ROS and robot telemetry inputs</h3><p>Inspect supported ROS2 bag files and timestamped robot event/telemetry CSVs using an offline workflow.</p></div>
@@ -43,24 +43,29 @@ section{margin-top:52px}.kicker{color:var(--mint);font-size:12px;text-transform:
 </section>
 <section aria-labelledby="how"><span class="kicker">First steps</span><h2 id="how">Try it without uploading your customer logs.</h2>
 <div class="card step"><span class="number">1</span><div><h3>Explore the example</h3><p>Open a report generated by the real analyzer from built-in fictional inputs, not a field incident.</p></div></div>
-<div class="card step"><span class="number">2</span><div><h3>Request pilot access</h3><p>Tell us your ROS/log format and investigation goal using only nonconfidential information. GitHub issue requests are public.</p></div></div>
+<div class="card step"><span class="number">2</span><div><h3>Prepare and submit a request</h3><p>Draft your role, log format and investigation goal in the browser using only nonconfidential information, then post it through the public GitHub issue form.</p></div></div>
 <div class="card step"><span class="number">3</span><div><h3>Evaluate locally</h3><p>After manual approval and separate distribution, use the Windows portable package or Python zipapp on data you have permission to analyze.</p></div></div>
 <p class="note"><strong>Current stage:</strong> Research prototype, private manual evaluation. No public one-click installer, live checkout, automatic trial activation, certified field-detection accuracy, or production SLA. Do not attach confidential logs, customer details, credentials, or proprietary message definitions to public issues.</p>
 </section>
 <section id="request" aria-labelledby="request-heading">
-<span class="kicker">Private evaluation · manual review</span>
-<h2 id="request-heading">Interested in trying RIA on your computer?</h2>
+<span class="kicker">14-day evaluation · no payment · manual review</span>
+<h2 id="request-heading">Want to evaluate RIA locally?</h2>
 <div class="card">
-<h3>First, send a public GitHub request</h3>
-<p>A GitHub account is required. Your request and GitHub username are public. Share only your general role, log format and what you want to investigate. Do not include your email address, employer or customer names, credentials, or logs.</p>
+<h3>1 · Prepare your request in this browser</h3>
+<p>Prepare a request using four fixed choices: your role, operating environment, recording format, and investigation goal. You can create and copy a draft without an account. Nothing is submitted from the request builder.</p>
+<a class="btn secondary" href="./request.html">Prepare my request</a>
 </div>
 <div class="card">
-<h3>Then, agree on private delivery</h3>
-<p>If approved, arrange a private delivery channel separately. The evaluation is free; there is no immediate download or payment on this page. Windows portable EXE and Python options are described in the evaluation guide.</p>
-</div>
+<h3>2 · Submit the public GitHub request</h3>
+<p>To actually request access, review and post your information through our public GitHub issue form. A GitHub account is required and your request, including your GitHub username, is public. Share only your general role, log format and what you want to investigate — never your email address, employer or customer names, credentials, or logs.</p>
 <a class="btn" href="https://github.com/ODIN3797/robot-incident-analyzer-site/issues/new?template=pilot_request.yml">Continue to public GitHub request ↗</a>
-<p class="sub">Want to see the answers first? <a href="./request.html">Build your request draft in the browser</a> — it sends nothing. <a href="./first-15-minutes.html">First 15 minutes</a> · <a href="./report-guide.html">How to read a report</a></p>
-<p class="sub">Manual review · GitHub account required · Public submission</p>
+</div>
+<div class="card">
+<h3>3 · Agree on private delivery</h3>
+<p>Requests are reviewed manually and approval is not guaranteed. If approved, arrange a private delivery channel separately. There is no immediate download or payment on this page; Windows portable EXE and Python options are described in the evaluation guide.</p>
+</div>
+<p class="sub">14-day evaluation · No payment · Manual approval · Private delivery arranged separately</p>
+<p class="sub">Not sure where to start? <a href="./first-15-minutes.html">First 15 minutes</a> · <a href="./report-guide.html">How to read a report</a></p>
 </section>
 <section aria-labelledby="learn"><span class="kicker">More</span><h2 id="learn">Explore the full product.</h2><div class="links"><a href="./index.html">Product overview ↗</a><a href="./pricing.html">Trial &amp; plans ↗</a><a href="./PILOT_GUIDE.md">Evaluation guide ↗</a><a href="./privacy.html">Privacy ↗</a><a href="./pilot-terms.html">Pilot scope ↗</a></div></section>
 </main>
