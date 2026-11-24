@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A 15-minute path through Robot Incident Analyzer: read the fictional sample report, follow one finding's evidence, understand the limits, then decide whether to prepare an evaluation request.">
+<meta name="theme-color" content="#081421">
+<title>Your first 15 minutes · Robot Incident Analyzer</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Your first 15 minutes with RIA">
+<meta property="og:description" content="A short, honest walkthrough that works before you are approved for a private pilot.">
+<link rel="canonical" href="https://odin3797.github.io/robot-incident-analyzer-site/first-15-minutes.html">
+<style>
+:root{color-scheme:dark;--bg:#081421;--text:#eaf5fa;--muted:#a5bac9;--accent:#6ef0d1;--amber:#efc08b;--line:#334e60}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse 85% 400px at 50% 0%,#164049,transparent 72%),var(--bg);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}
+a{color:var(--accent);text-underline-offset:4px}
+a:focus-visible,summary:focus-visible{outline:3px solid #e6c17d;outline-offset:3px}
+.shell{width:min(1000px,calc(100% - 36px));margin:auto}
+nav{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:24px 0;border-bottom:1px solid #294357;flex-wrap:wrap}
+.brand{text-decoration:none;color:#f1ffff;font-size:1.02rem;font-weight:800;letter-spacing:-.035em}
+.brand span{color:var(--accent);margin-right:10px}
+.navlinks{display:flex;gap:20px;flex-wrap:wrap}
+.navlinks a{color:#bcd4dc;text-decoration:none;font-size:.86rem}
+main{padding:56px 0 84px}
+.eyebrow{font-size:.75rem;font-weight:850;letter-spacing:.17em;color:var(--accent)}
+h1{font-size:clamp(2.2rem,5vw,3.3rem);letter-spacing:-.06em;line-height:1.1;margin:16px 0 18px}
+.lead{color:var(--muted);font-size:1rem;line-height:1.8;max-width:780px}
+.steps{margin:34px 0 0;display:grid;gap:12px;counter-reset:step}
+.step{border:1px solid var(--line);background:linear-gradient(130deg,#172b3c,#102031);border-radius:14px;padding:18px 20px;display:grid;grid-template-columns:74px minmax(0,1fr);gap:16px;align-items:start}
+.clock{font:800 .8rem/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--amber);border-right:1px solid #2e4a5c;padding-right:12px}
+.step h2{font-size:1rem;margin:0 0 6px}
+.step p{font-size:.89rem;color:var(--muted);margin:0;line-height:1.7}
+.step .done-mark{font-size:.78rem;color:var(--accent);display:block;margin-top:7px}
+.section{margin-top:38px}
+.section h2{font-size:1.15rem;margin:0 0 12px;letter-spacing:-.02em}
+.section p,.section li{font-size:.88rem;color:var(--muted);line-height:1.75}
+.section ul,.section ol{padding-left:20px;margin:8px 0 0}
+details{border:1px solid #2e4a5c;background:#101f2d;border-radius:11px;padding:13px 16px;margin-top:10px}
+details summary{cursor:pointer;font-weight:750;font-size:.9rem}
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:.84rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #264254;vertical-align:top}
+th{color:#bcd9d3;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase}
+td{color:var(--muted)}
+.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:32px}
+.button{display:inline-flex;justify-content:center;align-items:center;min-height:48px;border-radius:11px;border:1px solid var(--accent);background:var(--accent);color:#062a26;font-weight:800;font-size:.92rem;padding:11px 18px;text-decoration:none}
+.button.secondary{background:transparent;color:var(--text);border-color:#4d7480}
+.note{border:1px solid #6a5a3d;border-left:3px solid var(--amber);background:#241f18;border-radius:8px;padding:13px 16px;color:#f0dfc3;font-size:.85rem;margin:20px 0 0}
+footer{padding:26px 0 46px;border-top:1px solid #223243;color:#8b9faf;font-size:.78rem}
+@media(max-width:600px){.step{grid-template-columns:1fr}.clock{border-right:0;border-bottom:1px solid #2e4a5c;padding:0 0 8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="shell">
+<nav aria-label="Site">
+<a class="brand" href="./index.html" aria-label="Robot Incident Analyzer home"><span>R·I·A</span>Robot Incident Analyzer</a>
+<div class="navlinks">
+<a href="./index.html">Product</a>
+<a href="./pricing.html">Trial &amp; plans</a>
+<a href="./report-guide.html">Read a report</a>
+<a href="./request.html">Prepare a request</a>
+</div>
+</nav>
+<main id="top">
+<div class="eyebrow">Public path · no installation · no account to read</div>
+<h1>Your first 15 minutes with RIA.</h1>
+<p class="lead">Everything below works before any approval, because it only uses the public, fictional-data sample report. The times are a suggested order, not a promise that you will finish in exactly 15 minutes.</p>
+
+<div class="steps">
+<div class="step">
+<span class="clock">0–3 min</span>
+<div><h2>Understand the sample</h2>
+<p>Open the engine-generated sample report. The recording data is wholly fictional, no installation is needed, and analyzer version 0.7.58 produced it.</p></div>
+</div>
+<div class="step">
+<span class="clock">3–6 min</span>
+<div><h2>Find one candidate finding</h2>
+<p>Pick the highest-severity finding and read its timestamp, its severity and what the analyzer claims was observed.</p></div>
+</div>
+<div class="step">
+<span class="clock">6–10 min</span>
+<div><h2>Follow the evidence</h2>
+<p>Open the linked observations and the event timeline. Write down one piece of evidence that supports the finding and one thing the recording does not contain.</p></div>
+</div>
+<div class="step">
+<span class="clock">10–12 min</span>
+<div><h2>Understand the limits</h2>
+<p>Say out loud why this candidate is not an automatically confirmed physical fault. If that is clear, you are reading the report the way it is meant to be read.</p></div>
+</div>
+<div class="step">
+<span class="clock">12–15 min</span>
+<div><h2>Decide your next step</h2>
+<p>Three honest options: prepare an evaluation request, stay with the public sample, or stop here. None of them requires a payment.</p></div>
+</div>
+</div>
+
+<section class="section" aria-labelledby="approved-heading">
+<h2 id="approved-heading">If you are approved for the private pilot</h2>
+<p>Access is manual and nothing is downloaded from this site. After approval, the delivery channel and evaluation terms are agreed separately.</p>
+<ul>
+<li><strong>Windows:</strong> the unsigned portable ZIP is checked against the SHA-256 you receive, then extracted and run as <code>RobotIncidentAnalyzer.exe</code>. It is not an installer and Windows may warn about an unsigned file.</li>
+<li><strong>Python:</strong> run the provided zipapp on Python 3.10 or newer.</li>
+<li><strong>Data:</strong> analyze only recordings you are permitted to use, on your own machine. Nothing is uploaded by the analyzer.</li>
+</ul>
+<div class="note">The private evaluation package is a separate 0.7.59 build. Its output may differ from the 0.7.58 sample report.</div>
+</section>
+
+<section class="section" aria-labelledby="trouble-heading">
+<h2 id="trouble-heading">When something goes wrong</h2>
+<table>
+<thead><tr><th>Situation</th><th>What to do</th></tr></thead>
+<tbody>
+<tr><td>The sample report does not open</td><td>Open the link again in a current browser, or download the file and open it locally.</td></tr>
+<tr><td>Timeline interactions do not respond</td><td>Check that JavaScript is enabled; the report is interactive and static-only browsers show the text without the timeline.</td></tr>
+<tr><td>You do not have a GitHub account</td><td>You can still build and copy a draft, but the current verified submission channel requires GitHub. No other channel is verified yet.</td></tr>
+<tr><td>Windows blocks the portable build</td><td>The build is unsigned. Verify where the file came from and its SHA-256. Do not disable security features on our advice.</td></tr>
+<tr><td>A ROS message type is not supported</td><td>Some formats or optional dependencies may be unsupported. Check the evaluation guide for the supported scope.</td></tr>
+<tr><td>No anomalies were detected</td><td>That does not prove the robot behaved correctly; signals may be missing from the recording. It is a coverage question, not a clearance.</td></tr>
+</tbody>
+</table>
+</section>
+
+<div class="actions">
+<a class="button" href="./demo/report.html" target="_blank" rel="noopener noreferrer">Open the sample report ↗</a>
+<a class="button secondary" href="./request.html">Prepare an evaluation request</a>
+<a class="button secondary" href="./PILOT_GUIDE.md">Full evaluation guide</a>
+</div>
+</main>
+<footer>© Robot Incident Analyzer · Suggested order only · Not a performance guarantee.</footer>
+</div>
+</body>
+</html>
